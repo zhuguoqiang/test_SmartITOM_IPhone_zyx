@@ -11,5 +11,6 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-//adfjaksdjf
+//@property (strong, nonatomic) UIImage *img;
+
 @end
