@@ -18,7 +18,6 @@
 
 @synthesize eLineChart = _eLineChart;
 @synthesize eLineChartData = _eLineChartData;
-
 @synthesize eLineChartScale = _eLineChartScale;
 @synthesize views;
 
@@ -70,14 +69,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return 1;
 }
@@ -125,8 +122,8 @@
     return maxDataModel;
 }
 
-- (ELineChartDataModel *)     eLineChart:(ELineChart *) eLineChart
-                           valueForIndex:(NSInteger)index
+- (ELineChartDataModel *)eLineChart:(ELineChart *)eLineChart
+                      valueForIndex:(NSInteger)index
 {
     if (index >= [_eLineChartData count] || index < 0) return nil;
     return [_eLineChartData objectAtIndex:index];
