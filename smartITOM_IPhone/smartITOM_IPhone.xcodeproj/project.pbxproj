@@ -16,6 +16,7 @@
 		189B180018C57FEF006F6370 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 189B17FF18C57FEF006F6370 /* Main.storyboard */; };
 		189B180318C5ADD2006F6370 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189B180218C5ADD2006F6370 /* LoginViewController.m */; };
 		189B180818C5C5EB006F6370 /* user.txt in Resources */ = {isa = PBXBuildFile; fileRef = 189B180718C5C5EB006F6370 /* user.txt */; };
+		189B180C18C5D073006F6370 /* 123.png in Resources */ = {isa = PBXBuildFile; fileRef = 189B180B18C5D073006F6370 /* 123.png */; };
 		4A21E73818BF125600B13FE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A21E73718BF125600B13FE7 /* Foundation.framework */; };
 		4A21E73A18BF125600B13FE7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A21E73918BF125600B13FE7 /* CoreGraphics.framework */; };
 		4A21E73C18BF125600B13FE7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A21E73B18BF125600B13FE7 /* UIKit.framework */; };
@@ -58,6 +59,7 @@
 		189B180118C5ADD2006F6370 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		189B180218C5ADD2006F6370 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		189B180718C5C5EB006F6370 /* user.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = user.txt; sourceTree = "<group>"; };
+		189B180B18C5D073006F6370 /* 123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 123.png; sourceTree = "<group>"; };
 		4A21E73418BF125600B13FE7 /* smartITOM_IPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smartITOM_IPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A21E73718BF125600B13FE7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4A21E73918BF125600B13FE7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -164,6 +166,7 @@
 		4A21E73E18BF125600B13FE7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				189B180B18C5D073006F6370 /* 123.png */,
 				4A21E73F18BF125600B13FE7 /* smartITOM_IPhone-Info.plist */,
 				4A21E74018BF125600B13FE7 /* InfoPlist.strings */,
 				4A21E74318BF125600B13FE7 /* main.m */,
@@ -270,6 +273,7 @@
 				189B180818C5C5EB006F6370 /* user.txt in Resources */,
 				4A21E74218BF125600B13FE7 /* InfoPlist.strings in Resources */,
 				189B180018C57FEF006F6370 /* Main.storyboard in Resources */,
+				189B180C18C5D073006F6370 /* 123.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

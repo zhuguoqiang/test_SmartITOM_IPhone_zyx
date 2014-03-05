@@ -28,10 +28,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    NSString *filePath = [self documentsPath:@"user.txt"];
-    NSArray *user = [NSArray arrayWithContentsOfFile:filePath];
+//    NSString *filePath = [self documentsPath:@"user.txt"];
+//    NSArray *user = [NSArray arrayWithContentsOfFile:filePath];
     self.username.text = @"admin";
-    self.password.text = [user objectAtIndex:1];
+    self.password.text = @"123456";
+//    self.password.text = [user objectAtIndex:1];
     
     self.password.secureTextEntry = YES;
 }
