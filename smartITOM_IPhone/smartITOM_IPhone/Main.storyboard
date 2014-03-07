@@ -333,30 +333,74 @@
             </objects>
             <point key="canvasLocation" x="-276" y="469"/>
         </scene>
-        <!--Table View Controller - 我的工具-->
+        <!--Tool View Controller - 我的工具-->
         <scene sceneID="Eb1-KZ-42u">
             <objects>
-                <tableViewController id="I9q-yT-n90" sceneMemberID="viewController">
+                <tableViewController id="I9q-yT-n90" customClass="ToolViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Jsq-sh-2SY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="hDQ-Sg-XAV">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="toolCell" id="hDQ-Sg-XAV">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hDQ-Sg-XAV" id="dxb-cG-etZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="gNe-Pd-PVe" kind="push" identifier="TableCellToDetil" id="5gU-Wt-Q3s"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="I9q-yT-n90" id="tsS-Gf-M9K"/>
+                            <outlet property="delegate" destination="I9q-yT-n90" id="Sdd-nJ-VwV"/>
+                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="我的工具" id="j1x-Ff-c5n"/>
                 </tableViewController>
+                <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="9Rn-KJ-mzH" style="IBUITableViewCellStyleDefault" id="Bg2-U4-kFD">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bg2-U4-kFD" id="kKv-D7-2Os">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="意见反馈" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Rn-KJ-mzH">
+                                <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </tableViewCellContentView>
+                </tableViewCell>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QYc-TO-H0Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="298" y="1215"/>
+            <point key="canvasLocation" x="267" y="1215"/>
+        </scene>
+        <!--Tool Detil View Controller-->
+        <scene sceneID="wae-t4-Mc1">
+            <objects>
+                <viewController id="gNe-Pd-PVe" customClass="ToolDetilViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8qf-HV-iF9"/>
+                        <viewControllerLayoutGuide type="bottom" id="22c-9d-PgC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ugj-xB-hMF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rC8-YX-X2l"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nl-xV-d6k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="700" y="1215"/>
         </scene>
         <!--Navigation Controller - 我的工具-->
         <scene sceneID="EVu-r3-EnQ">
@@ -437,7 +481,7 @@
                                     <action selector="textFieldDoneEditing:" destination="eMT-Te-61h" eventType="editingDidEndOnExit" id="DH1-ux-aCg"/>
                                 </connections>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="123.png" translatesAutoresizingMaskIntoConstraints="NO" id="iOg-09-WgD">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="iOg-09-WgD">
                                 <rect key="frame" x="43" y="20" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -495,8 +539,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="123.png" width="295" height="134"/>
         <image name="icon.png" width="37" height="36"/>
+        <image name="logo.png" width="295" height="134"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

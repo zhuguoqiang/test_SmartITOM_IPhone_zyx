@@ -15,10 +15,12 @@
 		18437E8818BF21BF00F916D5 /* ELine.m in Sources */ = {isa = PBXBuildFile; fileRef = 18437E8018BF21BF00F916D5 /* ELine.m */; };
 		18437E8918BF21BF00F916D5 /* ELineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 18437E8218BF21BF00F916D5 /* ELineChart.m */; };
 		18437E8A18BF21BF00F916D5 /* ELineChartDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18437E8418BF21BF00F916D5 /* ELineChartDataModel.m */; };
+		1856980318C96CEF00640F10 /* ToolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1856980218C96CEF00640F10 /* ToolViewController.m */; };
+		1856980618C9775000640F10 /* ToolDetilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1856980518C9775000640F10 /* ToolDetilViewController.m */; };
 		189B180018C57FEF006F6370 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 189B17FF18C57FEF006F6370 /* Main.storyboard */; };
 		189B180318C5ADD2006F6370 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189B180218C5ADD2006F6370 /* LoginViewController.m */; };
 		189B180818C5C5EB006F6370 /* user.txt in Resources */ = {isa = PBXBuildFile; fileRef = 189B180718C5C5EB006F6370 /* user.txt */; };
-		189B180C18C5D073006F6370 /* 123.png in Resources */ = {isa = PBXBuildFile; fileRef = 189B180B18C5D073006F6370 /* 123.png */; };
+		189B180C18C5D073006F6370 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 189B180B18C5D073006F6370 /* logo.png */; };
 		4A21E73818BF125600B13FE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A21E73718BF125600B13FE7 /* Foundation.framework */; };
 		4A21E73A18BF125600B13FE7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A21E73918BF125600B13FE7 /* CoreGraphics.framework */; };
 		4A21E73C18BF125600B13FE7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A21E73B18BF125600B13FE7 /* UIKit.framework */; };
@@ -60,11 +62,15 @@
 		18437E8218BF21BF00F916D5 /* ELineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELineChart.m; sourceTree = "<group>"; };
 		18437E8318BF21BF00F916D5 /* ELineChartDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELineChartDataModel.h; sourceTree = "<group>"; };
 		18437E8418BF21BF00F916D5 /* ELineChartDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELineChartDataModel.m; sourceTree = "<group>"; };
+		1856980118C96CEF00640F10 /* ToolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolViewController.h; sourceTree = "<group>"; };
+		1856980218C96CEF00640F10 /* ToolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolViewController.m; sourceTree = "<group>"; };
+		1856980418C9775000640F10 /* ToolDetilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolDetilViewController.h; sourceTree = "<group>"; };
+		1856980518C9775000640F10 /* ToolDetilViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolDetilViewController.m; sourceTree = "<group>"; };
 		189B17FF18C57FEF006F6370 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		189B180118C5ADD2006F6370 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		189B180218C5ADD2006F6370 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		189B180718C5C5EB006F6370 /* user.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = user.txt; sourceTree = "<group>"; };
-		189B180B18C5D073006F6370 /* 123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 123.png; sourceTree = "<group>"; };
+		189B180B18C5D073006F6370 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		4A21E73418BF125600B13FE7 /* smartITOM_IPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smartITOM_IPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A21E73718BF125600B13FE7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4A21E73918BF125600B13FE7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -109,6 +115,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1856980018C9599300640F10 /* EChart */ = {
+			isa = PBXGroup;
+			children = (
+				18437E7918BF21BF00F916D5 /* EChartCell.h */,
+				18437E7A18BF21BF00F916D5 /* EChartCell.m */,
+				18437E7B18BF21BF00F916D5 /* EChartViewController.h */,
+				18437E7C18BF21BF00F916D5 /* EChartViewController.m */,
+				18437E7D18BF21BF00F916D5 /* EColor.h */,
+				18437E7E18BF21BF00F916D5 /* EColor.m */,
+				18437E7F18BF21BF00F916D5 /* ELine.h */,
+				18437E8018BF21BF00F916D5 /* ELine.m */,
+				18437E8118BF21BF00F916D5 /* ELineChart.h */,
+				18437E8218BF21BF00F916D5 /* ELineChart.m */,
+			);
+			name = EChart;
+			sourceTree = "<group>";
+		};
 		4A21E72B18BF125600B13FE7 = {
 			isa = PBXGroup;
 			children = (
@@ -145,27 +168,21 @@
 				189B17FF18C57FEF006F6370 /* Main.storyboard */,
 				18074E1A18C6C5DB00A96318 /* EquipmentViewController.h */,
 				18074E1B18C6C5DB00A96318 /* EquipmentViewController.m */,
-				18437E7918BF21BF00F916D5 /* EChartCell.h */,
-				18437E7A18BF21BF00F916D5 /* EChartCell.m */,
-				18437E7B18BF21BF00F916D5 /* EChartViewController.h */,
-				18437E7C18BF21BF00F916D5 /* EChartViewController.m */,
-				18437E7D18BF21BF00F916D5 /* EColor.h */,
-				18437E7E18BF21BF00F916D5 /* EColor.m */,
-				18437E7F18BF21BF00F916D5 /* ELine.h */,
-				18437E8018BF21BF00F916D5 /* ELine.m */,
-				18437E8118BF21BF00F916D5 /* ELineChart.h */,
-				18437E8218BF21BF00F916D5 /* ELineChart.m */,
 				18437E8318BF21BF00F916D5 /* ELineChartDataModel.h */,
 				18437E8418BF21BF00F916D5 /* ELineChartDataModel.m */,
 				4A21E74618BF125600B13FE7 /* AppDelegate.h */,
 				4A21E74718BF125600B13FE7 /* AppDelegate.m */,
 				4A21E74C18BF125600B13FE7 /* ViewController.h */,
+				4A21E74D18BF125600B13FE7 /* ViewController.m */,
 				189B180118C5ADD2006F6370 /* LoginViewController.h */,
 				189B180218C5ADD2006F6370 /* LoginViewController.m */,
-				4A21E74D18BF125600B13FE7 /* ViewController.m */,
+				1856980118C96CEF00640F10 /* ToolViewController.h */,
+				1856980218C96CEF00640F10 /* ToolViewController.m */,
+				1856980418C9775000640F10 /* ToolDetilViewController.h */,
+				1856980518C9775000640F10 /* ToolDetilViewController.m */,
 				4A21E74F18BF125600B13FE7 /* Images.xcassets */,
+				1856980018C9599300640F10 /* EChart */,
 				4A21E73E18BF125600B13FE7 /* Supporting Files */,
-				189B180718C5C5EB006F6370 /* user.txt */,
 			);
 			path = smartITOM_IPhone;
 			sourceTree = "<group>";
@@ -173,8 +190,9 @@
 		4A21E73E18BF125600B13FE7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				189B180718C5C5EB006F6370 /* user.txt */,
 				18074E1D18C6CFEA00A96318 /* icon.png */,
-				189B180B18C5D073006F6370 /* 123.png */,
+				189B180B18C5D073006F6370 /* logo.png */,
 				4A21E73F18BF125600B13FE7 /* smartITOM_IPhone-Info.plist */,
 				4A21E74018BF125600B13FE7 /* InfoPlist.strings */,
 				4A21E74318BF125600B13FE7 /* main.m */,
@@ -282,7 +300,7 @@
 				18074E1E18C6CFEA00A96318 /* icon.png in Resources */,
 				4A21E74218BF125600B13FE7 /* InfoPlist.strings in Resources */,
 				189B180018C57FEF006F6370 /* Main.storyboard in Resources */,
-				189B180C18C5D073006F6370 /* 123.png in Resources */,
+				189B180C18C5D073006F6370 /* logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +323,8 @@
 				18437E8618BF21BF00F916D5 /* EChartViewController.m in Sources */,
 				4A21E74E18BF125600B13FE7 /* ViewController.m in Sources */,
 				4A21E74818BF125600B13FE7 /* AppDelegate.m in Sources */,
+				1856980618C9775000640F10 /* ToolDetilViewController.m in Sources */,
+				1856980318C96CEF00640F10 /* ToolViewController.m in Sources */,
 				18437E8518BF21BF00F916D5 /* EChartCell.m in Sources */,
 				189B180318C5ADD2006F6370 /* LoginViewController.m in Sources */,
 				18437E8818BF21BF00F916D5 /* ELine.m in Sources */,
