@@ -73,10 +73,20 @@
         NSLog(@"登陆成功！\n");
         
     }
+    else if ([self.username.text isEqual:@""] || [self.password.text isEqual:@""])
+    {
+        NSLog(@"用户名或密码为空！\n");
+        UIAlertView *judgeLogin = [[UIAlertView alloc]initWithTitle:@"登录提示"
+                                                            message:@"用户名或密码不能为空！"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"取消"
+                                                  otherButtonTitles:@"确定",nil];
+        [judgeLogin show];
+    }
     else
     {
         NSLog(@"用户名或密码错误！\n");
-        UIAlertView *judgeLogin = [[UIAlertView alloc]initWithTitle:@"提示"
+        UIAlertView *judgeLogin = [[UIAlertView alloc]initWithTitle:@"登录提示"
                                                message:@"用户名或密码错误！"
                                               delegate:self
                                      cancelButtonTitle:@"取消"
