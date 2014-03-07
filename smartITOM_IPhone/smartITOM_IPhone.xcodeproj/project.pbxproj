@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18074E1C18C6C5DB00A96318 /* EquipmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18074E1B18C6C5DB00A96318 /* EquipmentViewController.m */; };
+		18074E1E18C6CFEA00A96318 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 18074E1D18C6CFEA00A96318 /* icon.png */; };
 		18437E8518BF21BF00F916D5 /* EChartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18437E7A18BF21BF00F916D5 /* EChartCell.m */; };
 		18437E8618BF21BF00F916D5 /* EChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18437E7C18BF21BF00F916D5 /* EChartViewController.m */; };
 		18437E8718BF21BF00F916D5 /* EColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 18437E7E18BF21BF00F916D5 /* EColor.m */; };
@@ -43,6 +45,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18074E1A18C6C5DB00A96318 /* EquipmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EquipmentViewController.h; sourceTree = "<group>"; };
+		18074E1B18C6C5DB00A96318 /* EquipmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EquipmentViewController.m; sourceTree = "<group>"; };
+		18074E1D18C6CFEA00A96318 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		18437E7918BF21BF00F916D5 /* EChartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EChartCell.h; sourceTree = "<group>"; };
 		18437E7A18BF21BF00F916D5 /* EChartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EChartCell.m; sourceTree = "<group>"; };
 		18437E7B18BF21BF00F916D5 /* EChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EChartViewController.h; sourceTree = "<group>"; };
@@ -138,6 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				189B17FF18C57FEF006F6370 /* Main.storyboard */,
+				18074E1A18C6C5DB00A96318 /* EquipmentViewController.h */,
+				18074E1B18C6C5DB00A96318 /* EquipmentViewController.m */,
 				18437E7918BF21BF00F916D5 /* EChartCell.h */,
 				18437E7A18BF21BF00F916D5 /* EChartCell.m */,
 				18437E7B18BF21BF00F916D5 /* EChartViewController.h */,
@@ -166,6 +173,7 @@
 		4A21E73E18BF125600B13FE7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				18074E1D18C6CFEA00A96318 /* icon.png */,
 				189B180B18C5D073006F6370 /* 123.png */,
 				4A21E73F18BF125600B13FE7 /* smartITOM_IPhone-Info.plist */,
 				4A21E74018BF125600B13FE7 /* InfoPlist.strings */,
@@ -271,6 +279,7 @@
 			files = (
 				4A21E75018BF125600B13FE7 /* Images.xcassets in Resources */,
 				189B180818C5C5EB006F6370 /* user.txt in Resources */,
+				18074E1E18C6CFEA00A96318 /* icon.png in Resources */,
 				4A21E74218BF125600B13FE7 /* InfoPlist.strings in Resources */,
 				189B180018C57FEF006F6370 /* Main.storyboard in Resources */,
 				189B180C18C5D073006F6370 /* 123.png in Resources */,
@@ -292,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18074E1C18C6C5DB00A96318 /* EquipmentViewController.m in Sources */,
 				18437E8618BF21BF00F916D5 /* EChartViewController.m in Sources */,
 				4A21E74E18BF125600B13FE7 /* ViewController.m in Sources */,
 				4A21E74818BF125600B13FE7 /* AppDelegate.m in Sources */,
