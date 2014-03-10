@@ -57,13 +57,14 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // 返回组的数量
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // 返回section组的子项数量
     return array.count;
+//    return array1.count+array2.count;
 }
 
 //返回当前分组的组名
