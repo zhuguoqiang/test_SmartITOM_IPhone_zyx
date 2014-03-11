@@ -14,7 +14,6 @@
 		18409F9618CD6A60003D9632 /* host.png in Resources */ = {isa = PBXBuildFile; fileRef = 18409F9318CD6A60003D9632 /* host.png */; };
 		18409F9718CD6A60003D9632 /* alarm.png in Resources */ = {isa = PBXBuildFile; fileRef = 18409F9418CD6A60003D9632 /* alarm.png */; };
 		18409F9818CD6A60003D9632 /* msg.png in Resources */ = {isa = PBXBuildFile; fileRef = 18409F9518CD6A60003D9632 /* msg.png */; };
-		18409F9D18CD8DB4003D9632 /* LineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18409F9C18CD8DB4003D9632 /* LineChartView.m */; };
 		18409FA018CD8E78003D9632 /* HostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18409F9F18CD8E78003D9632 /* HostViewController.m */; };
 		18409FA318CD97BA003D9632 /* AlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18409FA218CD97BA003D9632 /* AlarmViewController.m */; };
 		18437E8518BF21BF00F916D5 /* EChartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18437E7A18BF21BF00F916D5 /* EChartCell.m */; };
@@ -65,8 +64,6 @@
 		18409F9318CD6A60003D9632 /* host.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = host.png; sourceTree = "<group>"; };
 		18409F9418CD6A60003D9632 /* alarm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarm.png; sourceTree = "<group>"; };
 		18409F9518CD6A60003D9632 /* msg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = msg.png; sourceTree = "<group>"; };
-		18409F9B18CD8DB4003D9632 /* LineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineChartView.h; sourceTree = "<group>"; };
-		18409F9C18CD8DB4003D9632 /* LineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineChartView.m; sourceTree = "<group>"; };
 		18409F9E18CD8E78003D9632 /* HostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostViewController.h; sourceTree = "<group>"; };
 		18409F9F18CD8E78003D9632 /* HostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostViewController.m; sourceTree = "<group>"; };
 		18409FA118CD97BA003D9632 /* AlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmViewController.h; sourceTree = "<group>"; };
@@ -155,8 +152,6 @@
 				18409FA218CD97BA003D9632 /* AlarmViewController.m */,
 				18409F9E18CD8E78003D9632 /* HostViewController.h */,
 				18409F9F18CD8E78003D9632 /* HostViewController.m */,
-				18409F9B18CD8DB4003D9632 /* LineChartView.h */,
-				18409F9C18CD8DB4003D9632 /* LineChartView.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -389,7 +384,6 @@
 				18437E8918BF21BF00F916D5 /* ELineChart.m in Sources */,
 				18437E8718BF21BF00F916D5 /* EColor.m in Sources */,
 				18409F8F18CD67CF003D9632 /* NewsViewController.m in Sources */,
-				18409F9D18CD8DB4003D9632 /* LineChartView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

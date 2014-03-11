@@ -7,22 +7,19 @@
 //
 
 #import "NewsViewController.h"
-//#import "NewsTableViewCell.h"
-//#import "LineChartView.h"
-//#import "HostViewController.h"
-//#import "AlarmViewController.h"
+#import "NewsTableViewCell.h"
+#import "HostViewController.h"
+#import "AlarmViewController.h"
 
 @interface NewsViewController ()
 {
-//    NSMutableArray *views;
 //    NSMutableArray *newsTime;
 //    NSMutableArray *newsName;
     NSString *newsTime;
     NSString *newsName;
-//    NSMutableArray *secondViewControllers;
-//
-//    UIView *secondView;
-//    UIView *thirdView;
+
+    UIView *secondView;
+    UIView *thirdView;
 }
 
 @property (strong,nonatomic) NSMutableArray *views;
@@ -48,13 +45,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    //初始化数组，为可变数组指定初始容量
+//    self.views = [NSMutableArray arrayWithCapacity:10];
+    self.views = [[NSMutableArray alloc] init];
 //    newsTime = [[NSMutableArray alloc] initWithObjects:@"9:12",@"8:30",@"7:00", nil];
 //    newsName = [[NSMutableArray alloc] initWithObjects:@"host_dhcc",@"alarm_flows",@"msg_itsm", nil];
     newsName = @"host_dhcc";
     newsTime = @"9:28";
-    
-    self.views = [NSMutableArray arrayWithCapacity:20];
     
     _eLineChartScale = 1;
     
@@ -75,81 +72,35 @@
     
     [self.views addObject:_eLineChart];
 
-//    secondViewControllers = [[NSMutableArray alloc] init];
-//
-//    views = [[NSMutableArray alloc] init];
 //    times = [[NSMutableArray alloc] initWithObjects:@"9:12",@"8:30",@"7:00", nil];
 //    enterpriseNames = [[NSMutableArray alloc] initWithObjects:@"host_dhcc",@"alarm_flows",@"msg_itsm", nil];
-//    
-//    //建立第一个UIView
-//    LineChartView *lineChartView = [[LineChartView alloc]initWithFrame:CGRectMake(0, 0,471, 480)];
+
     
+    //建立第二个UIView
+    secondView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 400, 200)];
+    UILabel *fLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 400, 100)];
+    fLabel.text = @"Flowserve";
+    fLabel.textColor = [UIColor redColor];
+    fLabel.font = [UIFont fontWithName:nil size:60];
+    UILabel *ffLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 100, 400, 100)];
+    ffLabel.text = @"内存利用率阀值越界";
+    ffLabel.font = [UIFont fontWithName:nil size:40];
     
-//    NSMutableArray *pointArr = [[NSMutableArray alloc]init];
-//    
-//    //生成随机点
-//    [pointArr addObject:[NSValue valueWithCGPoint:CGPointMake(50*0, 0)]];
-//    [pointArr addObject:[NSValue valueWithCGPoint:CGPointMake(50*1, 40)]];
-//    [pointArr addObject:[NSValue valueWithCGPoint:CGPointMake(50*2, 70)]];
-//    [pointArr addObject:[NSValue valueWithCGPoint:CGPointMake(50*3, 30)]];
-//    [pointArr addObject:[NSValue valueWithCGPoint:CGPointMake(50*4, 20)]];
-//    [pointArr addObject:[NSValue valueWithCGPoint:CGPointMake(50*5, 55)]];
-//    [pointArr addObject:[NSValue valueWithCGPoint:CGPointMake(50*6, 80)]];
-//    [pointArr addObject:[NSValue valueWithCGPoint:CGPointMake(50*7, 100)]];
-//    [pointArr addObject:[NSValue valueWithCGPoint:CGPointMake(50*8, 43)]];
-//    [pointArr addObject:[NSValue valueWithCGPoint:CGPointMake(50*9, 59)]];
-//    [pointArr addObject:[NSValue valueWithCGPoint:CGPointMake(50*10, 23)]];
-//    
-//    //竖轴
-//    NSMutableArray *vArr = [[NSMutableArray alloc]initWithCapacity:pointArr.count-1];
-//    for (int i=0; i<9; i++) {
-//        [vArr addObject:[NSString stringWithFormat:@"%d",i*20]];
-//    }
-//    
-//    //横轴
-//    NSMutableArray *hArr = [[NSMutableArray alloc]initWithCapacity:pointArr.count-1];
-//    
-//    [hArr addObject:@"05-26"];
-//    [hArr addObject:@"05-27"];
-//    [hArr addObject:@"05-28"];
-//    [hArr addObject:@"05-29"];
-//    [hArr addObject:@"05-30"];
-//    [hArr addObject:@"06-01"];
-//    [hArr addObject:@"06-02"];
-//    [hArr addObject:@"06-03"];
-//    [hArr addObject:@"06-04"];
-//    [hArr addObject:@"06-05"];
-//    
-//    
-//    [lineChartView setHDesc:hArr];
-//    [lineChartView setVDesc:vArr];
-//    [lineChartView setArray:pointArr];
-//    
-//    [views addObject:lineChartView];
-//    
-//    //建立第二个UIView
-//    secondView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 400, 200)];
-//    UILabel *fLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 400, 100)];
-//    fLabel.text = @"Flowserve";
-//    fLabel.textColor = [UIColor redColor];
-//    fLabel.font = [UIFont fontWithName:nil size:60];
-//    UILabel *ffLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 100, 400, 100)];
-//    ffLabel.text = @"内存利用率阀值越界";
-//    ffLabel.font = [UIFont fontWithName:nil size:40];
-//    
-//    [secondView addSubview:fLabel];
-//    [secondView addSubview:ffLabel];
-//    
-//    [views addObject:secondView];
-//    
-//    //第三个UIView
-//    thirdView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 400, 200)];
-//    UILabel *sLabel = [[UILabel alloc] initWithFrame:thirdView.frame];
-//    sLabel.text = @"故障通知";
-//    sLabel.textColor = [UIColor redColor];
-//    sLabel.font = [UIFont fontWithName:nil size:60];    [thirdView addSubview:sLabel];
-//    
-//    [views addObject:thirdView];
+    [secondView addSubview:fLabel];
+    [secondView addSubview:ffLabel];
+    
+    [self.views addObject:secondView];
+
+    //第三个UIView
+    thirdView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 400, 200)];
+    UILabel *sLabel = [[UILabel alloc] initWithFrame:thirdView.frame];
+    sLabel.text = @"故障通知";
+    sLabel.textColor = [UIColor redColor];
+    sLabel.font = [UIFont fontWithName:nil size:60];
+    
+    [thirdView addSubview:sLabel];
+    
+    [self.views addObject:thirdView];
 }
 
 
@@ -170,7 +121,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 1;
+    return views.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -180,11 +131,11 @@
     
 //    cell.newsName.text = [newsName objectAtIndex:indexPath.row];
 //    cell.newsTime.text = [newsTime objectAtIndex:indexPath.row];
+    [cell.newsImages setImage:[UIImage imageNamed:@"host.png"]];
     cell.newsNames.text = [NSString stringWithFormat:@"%@",newsName];
     cell.newsTimes.text = [NSString stringWithFormat:@"%@",newsTime];
-
 //    [cell.chartView addSubview:[views objectAtIndex:indexPath.row]];
-//    [cell.imageView setImage:[UIImage imageNamed:@"user@2x.png"]];
+
     
     // Configure the cell...
     UIView *newView = [self.views objectAtIndex:indexPath.row];
@@ -268,7 +219,7 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
@@ -296,6 +247,6 @@
 
 }
 
-*/
+
 
 @end

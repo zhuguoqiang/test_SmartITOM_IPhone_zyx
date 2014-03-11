@@ -95,7 +95,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewsCell" rowHeight="160" id="YQ9-BO-DhY" customClass="NewsTableViewCell">
+                            <tableViewCell tag="10" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewsCell" rowHeight="160" id="YQ9-BO-DhY" customClass="NewsTableViewCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="160"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YQ9-BO-DhY" id="2EO-Ck-K4e">
@@ -107,7 +107,7 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         </view>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="host.png" translatesAutoresizingMaskIntoConstraints="NO" id="T6f-VH-neM">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T6f-VH-neM">
                                             <rect key="frame" x="20" y="20" width="83" height="80"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -126,6 +126,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="newsImages" destination="T6f-VH-neM" id="tuy-5u-gS3"/>
                                     <outlet property="newsNames" destination="cic-3e-GCG" id="zyR-a9-Sg7"/>
                                     <outlet property="newsTimes" destination="vmj-AU-Svx" id="s6M-Fx-HtZ"/>
                                     <outlet property="view" destination="5um-Vh-bl1" id="acN-cz-mod"/>
@@ -139,12 +140,17 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="消息中心" id="a3j-6u-BNm"/>
+                    <connections>
+                        <segue destination="wAe-3H-ssN" kind="push" identifier="host" id="iSn-kz-gVh"/>
+                        <segue destination="n0M-HW-PWc" kind="push" identifier="alarm" id="JTF-aa-xtD"/>
+                        <segue destination="ECT-0I-5n9" kind="push" identifier="msg" id="WCa-nt-vvK"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="slh-Gn-ejT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="155" y="-256"/>
         </scene>
-        <!--Chart View Controller - 消息中心-->
+        <!--Chart View Controller - host-->
         <scene sceneID="FO0-ak-xf0">
             <objects>
                 <tableViewController id="wAe-3H-ssN" customClass="EChartViewController" sceneMemberID="viewController">
@@ -154,7 +160,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EChartCell" rowHeight="160" id="KwF-hv-EFf" customClass="EChartCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="160"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="160"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KwF-hv-EFf" id="TyV-ka-TUk">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="159"/>
@@ -193,11 +199,30 @@
                             <outlet property="delegate" destination="wAe-3H-ssN" id="IAh-4l-1Nx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="消息中心" id="g8G-9P-14x"/>
+                    <navigationItem key="navigationItem" title="host" id="g8G-9P-14x"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HBo-Gq-VBS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="645" y="-256"/>
+            <point key="canvasLocation" x="816" y="-876"/>
+        </scene>
+        <!--View Controller - alarm-->
+        <scene sceneID="OOC-Ma-Abg">
+            <objects>
+                <viewController id="n0M-HW-PWc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wLA-zf-fJk"/>
+                        <viewControllerLayoutGuide type="bottom" id="79R-6C-bLm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hMf-DK-8bA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="alarm" id="fCm-QZ-lH5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tkd-1s-6OR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1262" y="-272"/>
         </scene>
         <!--Table View Controller - 关注-->
         <scene sceneID="1qq-9a-GS5">
@@ -469,6 +494,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MlA-Oq-yLN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="637" y="469"/>
+        </scene>
+        <!--View Controller - msg-->
+        <scene sceneID="OeE-Jh-juj">
+            <objects>
+                <viewController id="ECT-0I-5n9" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="beK-jv-2p9"/>
+                        <viewControllerLayoutGuide type="bottom" id="HgT-yE-5FU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="O3l-rf-Mzw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="msg" id="LIy-5F-gKj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rOH-yV-CRf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1632" y="460"/>
         </scene>
         <!--Navigation Controller - 关注-->
         <scene sceneID="aIh-hs-JEP">
