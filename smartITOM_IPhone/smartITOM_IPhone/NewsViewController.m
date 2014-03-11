@@ -13,15 +13,18 @@
 //#import "AlarmViewController.h"
 
 @interface NewsViewController ()
-//{
+{
 //    NSMutableArray *views;
-//    NSMutableArray *times;
-//    NSMutableArray *enterpriseNames;
+//    NSMutableArray *newsTime;
+//    NSMutableArray *newsName;
+    NSString *newsTime;
+    NSString *newsName;
 //    NSMutableArray *secondViewControllers;
-//    
+//
 //    UIView *secondView;
 //    UIView *thirdView;
-//}
+}
+
 @property (strong,nonatomic) NSMutableArray *views;
 
 
@@ -45,6 +48,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+//    newsTime = [[NSMutableArray alloc] initWithObjects:@"9:12",@"8:30",@"7:00", nil];
+//    newsName = [[NSMutableArray alloc] initWithObjects:@"host_dhcc",@"alarm_flows",@"msg_itsm", nil];
+    newsName = @"host_dhcc";
+    newsTime = @"9:28";
+    
     self.views = [NSMutableArray arrayWithCapacity:20];
     
     _eLineChartScale = 1;
@@ -65,22 +74,17 @@
     [_eLineChart setDataSource:self];
     
     [self.views addObject:_eLineChart];
-//
-//    // Uncomment the following line to preserve selection between presentations.
-//    // self.clearsSelectionOnViewWillAppear = NO;
-// 
-//    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-//    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
 //    secondViewControllers = [[NSMutableArray alloc] init];
-//    
+//
 //    views = [[NSMutableArray alloc] init];
 //    times = [[NSMutableArray alloc] initWithObjects:@"9:12",@"8:30",@"7:00", nil];
 //    enterpriseNames = [[NSMutableArray alloc] initWithObjects:@"host_dhcc",@"alarm_flows",@"msg_itsm", nil];
 //    
 //    //建立第一个UIView
 //    LineChartView *lineChartView = [[LineChartView alloc]initWithFrame:CGRectMake(0, 0,471, 480)];
-//    
-//    
+    
+    
 //    NSMutableArray *pointArr = [[NSMutableArray alloc]init];
 //    
 //    //生成随机点
@@ -174,8 +178,11 @@
     static NSString *CellIdentifier = @"NewsCell";
     NewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-//    cell.nowTime.text = [times objectAtIndex:indexPath.row];
-//    cell.enterpriseName.text = [enterpriseNames objectAtIndex:indexPath.row];
+//    cell.newsName.text = [newsName objectAtIndex:indexPath.row];
+//    cell.newsTime.text = [newsTime objectAtIndex:indexPath.row];
+    cell.newsNames.text = [NSString stringWithFormat:@"%@",newsName];
+    cell.newsTimes.text = [NSString stringWithFormat:@"%@",newsTime];
+
 //    [cell.chartView addSubview:[views objectAtIndex:indexPath.row]];
 //    [cell.imageView setImage:[UIImage imageNamed:@"user@2x.png"]];
     

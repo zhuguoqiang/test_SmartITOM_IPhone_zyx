@@ -86,7 +86,7 @@
             </objects>
             <point key="canvasLocation" x="273" y="-1147"/>
         </scene>
-        <!--News View Controller-->
+        <!--News View Controller - 消息中心-->
         <scene sceneID="mVe-cI-0ES">
             <objects>
                 <tableViewController id="KHQ-PN-N4B" customClass="NewsViewController" sceneMemberID="viewController">
@@ -111,14 +111,14 @@
                                             <rect key="frame" x="20" y="20" width="83" height="80"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="host_dhcc" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cic-3e-GCG">
-                                            <rect key="frame" x="113" y="20" width="80" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cic-3e-GCG">
+                                            <rect key="frame" x="111" y="20" width="99" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="15:49" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmj-AU-Svx">
-                                            <rect key="frame" x="258" y="20" width="43" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmj-AU-Svx">
+                                            <rect key="frame" x="252" y="20" width="48" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
@@ -126,6 +126,8 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="newsNames" destination="cic-3e-GCG" id="zyR-a9-Sg7"/>
+                                    <outlet property="newsTimes" destination="vmj-AU-Svx" id="s6M-Fx-HtZ"/>
                                     <outlet property="view" destination="5um-Vh-bl1" id="acN-cz-mod"/>
                                 </connections>
                             </tableViewCell>
@@ -136,7 +138,7 @@
                             <outlet property="delegate" destination="KHQ-PN-N4B" id="cPh-Ib-Bo4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="a3j-6u-BNm"/>
+                    <navigationItem key="navigationItem" title="消息中心" id="a3j-6u-BNm"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="slh-Gn-ejT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -195,7 +197,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HBo-Gq-VBS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="546" y="-275"/>
+            <point key="canvasLocation" x="645" y="-256"/>
         </scene>
         <!--Table View Controller - 关注-->
         <scene sceneID="1qq-9a-GS5">
@@ -683,7 +685,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="KHQ-PN-N4B" kind="relationship" relationship="rootViewController" id="zjI-bQ-YAH"/>
+                        <segue destination="KHQ-PN-N4B" kind="relationship" relationship="rootViewController" id="eXA-3F-Jgj"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UDb-GT-e4D" userLabel="First Responder" sceneMemberID="firstResponder"/>

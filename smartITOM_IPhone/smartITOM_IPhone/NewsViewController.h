@@ -11,10 +11,9 @@
 #import "ELineChart.h"
 
 @interface NewsViewController : UITableViewController<ELineChartDataSource,ELineChartDelegate>
+
 @property (strong, nonatomic) ELineChart *eLineChart;
-
 @property (strong, nonatomic) NSArray *eLineChartData;
-
 @property (nonatomic) float eLineChartScale;
 
 @end
