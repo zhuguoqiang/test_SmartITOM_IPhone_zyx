@@ -55,7 +55,7 @@
     
     _eLineChartScale = 1;
     
-    /** Generate data for _eLineChart*/
+    /**第一个UIView Generate data for _eLineChart*/
     NSMutableArray *tempArray = [NSMutableArray array];
     for (int i = 0 ; i < 300; i++)
     {
@@ -73,8 +73,8 @@
     
     [self.views addObject:_eLineChart];
 
-    //CGRectMake(x, y, width, height)
     //建立第二个UIView
+    //CGRectMake(x, y, width, height)
     secondView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 209, 110)];
     secondView.layer.borderWidth = 1;
     secondView.layer.borderColor = [[UIColor blueColor] CGColor];
@@ -136,8 +136,18 @@
     
     cell.newsNames.text = [newsName objectAtIndex:indexPath.row];
     cell.newsTimes.text = [newsTime objectAtIndex:indexPath.row];
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"host" ofType:@"png"];
-    [cell.newsImages setImage:[UIImage imageWithContentsOfFile:path]];
+    if (indexPath.row == 0) {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"host" ofType:@"png"];
+        [cell.newsImages setImage:[UIImage imageWithContentsOfFile:path]];
+    }else if (indexPath.row == 1) {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"alarm" ofType:@"png"];
+        [cell.newsImages setImage:[UIImage imageWithContentsOfFile:path]];
+    }else {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"msg" ofType:@"png"];
+        [cell.newsImages setImage:[UIImage imageWithContentsOfFile:path]];
+    }
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"host" ofType:@"png"];
+//    [cell.newsImages setImage:[UIImage imageWithContentsOfFile:path]];
 //    cell.newsNames.text = [NSString stringWithFormat:@"%@",newsName];
 //    cell.newsTimes.text = [NSString stringWithFormat:@"%@",newsTime];
 //    [cell.chartView addSubview:[views objectAtIndex:indexPath.row]];
@@ -149,6 +159,21 @@
     [cell.view addSubview:newView];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0)
+        
+        [self performSegueWithIdentifier:@"host" sender:self];
+    
+    else if(indexPath.row == 1)
+        
+        [self performSegueWithIdentifier:@"alarm" sender:self];
+    
+    else
+        
+        [self performSegueWithIdentifier:@"msg" sender:self];
 }
 
 #pragma -mark- ELineChart DataSource

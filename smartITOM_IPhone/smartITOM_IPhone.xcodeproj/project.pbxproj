@@ -204,7 +204,6 @@
 		4A21E73D18BF125600B13FE7 /* smartITOM_IPhone */ = {
 			isa = PBXGroup;
 			children = (
-				18409F9A18CD8DA2003D9632 /* view */,
 				189B17FF18C57FEF006F6370 /* Main.storyboard */,
 				18074E1A18C6C5DB00A96318 /* EquipmentViewController.h */,
 				18074E1B18C6C5DB00A96318 /* EquipmentViewController.m */,
@@ -227,6 +226,7 @@
 				18437E7918BF21BF00F916D5 /* EChartCell.h */,
 				18437E7A18BF21BF00F916D5 /* EChartCell.m */,
 				4A21E74F18BF125600B13FE7 /* Images.xcassets */,
+				18409F9A18CD8DA2003D9632 /* view */,
 				1856980018C9599300640F10 /* EChart */,
 				18409F9918CD6A82003D9632 /* img */,
 				4A21E73E18BF125600B13FE7 /* Supporting Files */,
