@@ -1,9 +1,9 @@
 //
 //  ELine.h
-//  EChartDemo
+//  smartITOM_IPhone
 //
-//  Created by Efergy China on 15/1/14.
-//  Copyright (c) 2014年 Scott Zhu. All rights reserved.
+//  Created by Apple Developer on 14-3-12.
+//  Copyright (c) 2014年 Apple002. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

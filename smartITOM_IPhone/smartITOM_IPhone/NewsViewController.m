@@ -13,10 +13,10 @@
 
 @interface NewsViewController ()
 {
-//    NSMutableArray *newsTime;
-//    NSMutableArray *newsName;
-    NSString *newsTime;
-    NSString *newsName;
+    NSMutableArray *newsName;
+    NSMutableArray *newsTime;
+//    NSString *newsName;
+//    NSString *newsTime;
 
     UIView *secondView;
     UIView *thirdView;
@@ -48,10 +48,10 @@
     //初始化数组，为可变数组指定初始容量
 //    self.views = [NSMutableArray arrayWithCapacity:10];
     self.views = [[NSMutableArray alloc] init];
-//    newsTime = [[NSMutableArray alloc] initWithObjects:@"9:12",@"8:30",@"7:00", nil];
-//    newsName = [[NSMutableArray alloc] initWithObjects:@"host_dhcc",@"alarm_flows",@"msg_itsm", nil];
-    newsName = @"host_dhcc";
-    newsTime = @"9:28";
+    newsName = [[NSMutableArray alloc] initWithObjects:@"host_dhcc",@"alarm_flows",@"msg_itsm", nil];
+    newsTime = [[NSMutableArray alloc] initWithObjects:@"9:12",@"8:30",@"7:00", nil];
+//    newsName = @"host_dhcc";
+//    newsTime = @"9:28";
     
     _eLineChartScale = 1;
     
@@ -64,25 +64,27 @@
         [tempArray addObject:eLineChartDataModel];
     }
     _eLineChartData = [NSArray arrayWithArray:tempArray];
-    
     /** The Actual frame for the line is half height of the frame you specified, because the bottom half is for the touch control, but it's empty */
     _eLineChart = [[ELineChart alloc] initWithFrame:CGRectMake(0, 30, CGRectGetWidth(self.view.frame), 107)];
+//    _eLineChart.layer.borderWidth = 1;
+//    _eLineChart.layer.borderColor = [[UIColor blueColor] CGColor];
     [_eLineChart setDelegate:self];
     [_eLineChart setDataSource:self];
     
     [self.views addObject:_eLineChart];
 
-//    times = [[NSMutableArray alloc] initWithObjects:@"9:12",@"8:30",@"7:00", nil];
-//    enterpriseNames = [[NSMutableArray alloc] initWithObjects:@"host_dhcc",@"alarm_flows",@"msg_itsm", nil];
-
-    
+    //CGRectMake(x, y, width, height)
     //建立第二个UIView
-    secondView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 400, 200)];
-    UILabel *fLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 400, 100)];
+    secondView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 209, 110)];
+    secondView.layer.borderWidth = 1;
+    secondView.layer.borderColor = [[UIColor blueColor] CGColor];
+//    frameView.layer.borderWidth = 1;
+//    frameView.layer.borderColor = [[UIColor whiteColor] CGColor];
+    UILabel *fLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 0, 200, 50)];
     fLabel.text = @"Flowserve";
     fLabel.textColor = [UIColor redColor];
-    fLabel.font = [UIFont fontWithName:nil size:60];
-    UILabel *ffLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 100, 400, 100)];
+    fLabel.font = [UIFont fontWithName:nil size:50];
+    UILabel *ffLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 50, 200, 50)];
     ffLabel.text = @"内存利用率阀值越界";
     ffLabel.font = [UIFont fontWithName:nil size:40];
     
@@ -92,11 +94,14 @@
     [self.views addObject:secondView];
 
     //第三个UIView
-    thirdView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 400, 200)];
-    UILabel *sLabel = [[UILabel alloc] initWithFrame:thirdView.frame];
+    thirdView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 209, 110)];
+    thirdView.layer.borderWidth = 1;
+    thirdView.layer.borderColor = [[UIColor blueColor] CGColor];
+//    UILabel *sLabel = [[UILabel alloc] initWithFrame:thirdView.frame];
+    UILabel *sLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 0, 200, 50)];
     sLabel.text = @"故障通知";
     sLabel.textColor = [UIColor redColor];
-    sLabel.font = [UIFont fontWithName:nil size:60];
+    sLabel.font = [UIFont fontWithName:nil size:50];
     
     [thirdView addSubview:sLabel];
     
@@ -129,11 +134,12 @@
     static NSString *CellIdentifier = @"NewsCell";
     NewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-//    cell.newsName.text = [newsName objectAtIndex:indexPath.row];
-//    cell.newsTime.text = [newsTime objectAtIndex:indexPath.row];
-    [cell.newsImages setImage:[UIImage imageNamed:@"host.png"]];
-    cell.newsNames.text = [NSString stringWithFormat:@"%@",newsName];
-    cell.newsTimes.text = [NSString stringWithFormat:@"%@",newsTime];
+    cell.newsNames.text = [newsName objectAtIndex:indexPath.row];
+    cell.newsTimes.text = [newsTime objectAtIndex:indexPath.row];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"host" ofType:@"png"];
+    [cell.newsImages setImage:[UIImage imageWithContentsOfFile:path]];
+//    cell.newsNames.text = [NSString stringWithFormat:@"%@",newsName];
+//    cell.newsTimes.text = [NSString stringWithFormat:@"%@",newsTime];
 //    [cell.chartView addSubview:[views objectAtIndex:indexPath.row]];
 
     

@@ -1,12 +1,13 @@
 //
 //  ELine.m
-//  EChartDemo
+//  smartITOM_IPhone
 //
-//  Created by Efergy China on 15/1/14.
-//  Copyright (c) 2014年 Scott Zhu. All rights reserved.
+//  Created by Apple Developer on 14-3-12.
+//  Copyright (c) 2014年 Apple002. All rights reserved.
 //
 
 #import "ELine.h"
+
 
 @interface ELine ()
 @property (nonatomic) CGFloat horizentalGap;
@@ -150,10 +151,10 @@
     } completion:^(BOOL finished) {
         
     }];
-
+    
     //NSLog(@"x = %.1f", _dot.frame.origin.x);
     [self addSubview:_dot];
-
+    
     //TODO: When the path changed, the dot gonna still be there
 }
 
@@ -164,12 +165,12 @@
     [super setTransform:newValue];
 }
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect
+ {
+ // Drawing code
+ }
+ */
 
 @end
