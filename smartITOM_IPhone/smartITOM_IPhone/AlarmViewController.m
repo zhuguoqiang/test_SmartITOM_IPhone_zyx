@@ -30,6 +30,7 @@
     self.IPLabel.text = self.IPLabelText;
     self.categoryLabel.text = self.categoryLabelText;
     self.manufactotyLabel.text = self.manufactoryLabeltext;
+    [self.detailView addSubview:self.informationView];
 }
 
 - (void)didReceiveMemoryWarning

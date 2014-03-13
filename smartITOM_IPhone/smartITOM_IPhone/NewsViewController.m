@@ -55,7 +55,7 @@
     
     _eLineChartScale = 1;
     
-    /**第一个UIView Generate data for _eLineChart*/
+    //第一个UIView _eLineChart---------------------------------------------------
     NSMutableArray *tempArray = [NSMutableArray array];
     for (int i = 0 ; i < 300; i++)
     {
@@ -73,7 +73,7 @@
     
     [self.views addObject:_eLineChart];
 
-    //建立第二个UIView
+    //第二个UIView---------------------------------------------------------------
     //CGRectMake(x, y, width, height)
     secondView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 209, 110)];
     secondView.layer.borderWidth = 1;
@@ -93,7 +93,7 @@
     
     [self.views addObject:secondView];
 
-    //第三个UIView
+    //第三个UIView---------------------------------------------------------------
     thirdView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 209, 110)];
     thirdView.layer.borderWidth = 1;
     thirdView.layer.borderColor = [[UIColor blueColor] CGColor];
@@ -176,6 +176,33 @@
         [self performSegueWithIdentifier:@"msg" sender:self];
 }
 
+#pragma mark - Navigation
+
+// In a story board-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"host"])
+    {
+        UIViewController *viewController = segue.destinationViewController;
+        HostViewController *hostViewController = (HostViewController *)viewController;
+        hostViewController.ipLabelText = @"192.168.0.1";
+        hostViewController.categoryLabelText = @"主机";
+        hostViewController.manufactotyLabelText = @"华为";
+        hostViewController.informationView = [views objectAtIndex:0];
+    }
+    else if ([segue.identifier isEqualToString: @"alarm"])
+    {
+        UIViewController *viewController = segue.destinationViewController;
+        AlarmViewController *alarmViewController = (AlarmViewController *)viewController;
+        alarmViewController.IPLabelText = @"192.168.0.2";
+        alarmViewController.categoryLabelText = @"服务器";
+        alarmViewController.manufactoryLabeltext = @"IBM";
+        alarmViewController.informationView = [views objectAtIndex:1];
+    }
+    
+}
+
+
 #pragma -mark- ELineChart DataSource
 - (NSInteger) numberOfPointsInELineChart:(ELineChart *) eLineChart
 {
@@ -249,34 +276,6 @@
     return YES;
 }
 */
-
-
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    if ([segue.identifier isEqualToString:@"host"])
-    {
-        UIViewController *viewController = segue.destinationViewController;
-        HostViewController *hostViewController = (HostViewController *)viewController;
-        hostViewController.ipLabelText = @"192.168.0.1";
-        hostViewController.categoryLabelText = @"主机";
-        hostViewController.manufactotyLabelText = @"华为";
-        hostViewController.informationView = [views objectAtIndex:0];
-    }
-    else if ([segue.identifier isEqualToString: @"alarm"])
-    {
-        UIViewController *viewController = segue.destinationViewController;
-        AlarmViewController *alarmViewController = (AlarmViewController *)viewController;
-        alarmViewController.IPLabelText = @"192.168.0.2";
-        alarmViewController.categoryLabelText = @"服务器";
-        alarmViewController.manufactoryLabeltext = @"IBM";
-    }
-
-}
 
 
 
