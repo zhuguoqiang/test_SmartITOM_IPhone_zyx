@@ -61,13 +61,52 @@
                     <navigationItem key="navigationItem" title="消息中心" id="a3j-6u-BNm"/>
                     <connections>
                         <segue destination="n0M-HW-PWc" kind="push" identifier="alarm" id="JTF-aa-xtD"/>
-                        <segue destination="15z-8S-3Y8" kind="push" identifier="host" id="9S3-Ot-eXW"/>
                         <segue destination="tW0-aL-Mt5" kind="push" identifier="msg" id="sEI-z2-p8Z"/>
+                        <segue destination="ihc-jp-EIE" kind="push" identifier="host" id="Qt5-rC-WQx"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="slh-Gn-ejT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="155" y="-256"/>
+        </scene>
+        <!--Host Table View Controller-->
+        <scene sceneID="x5n-3y-WpX">
+            <objects>
+                <tableViewController id="ihc-jp-EIE" customClass="HostTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="181" sectionHeaderHeight="22" sectionFooterHeight="22" id="cmz-Ce-6tF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HostCell" rowHeight="181" id="g0q-Na-umC" customClass="HostCell">
+                                <rect key="frame" x="0.0" y="86" width="320" height="181"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g0q-Na-umC" id="bx0-C4-fhP">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z1O-Of-Ozv">
+                                            <rect key="frame" x="0.0" y="19" width="320" height="141"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="view" destination="Z1O-Of-Ozv" id="UgG-Cz-C2A"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ihc-jp-EIE" id="PCi-gD-YuC"/>
+                            <outlet property="delegate" destination="ihc-jp-EIE" id="SWx-AE-VrE"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="FZy-cZ-27I"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hGB-Os-Ism" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="748" y="-1236"/>
         </scene>
         <!--Host View Controller - host_dhcc-->
         <scene sceneID="ihl-7t-SYo">
@@ -113,11 +152,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GUI-XL-WPg">
-                                <rect key="frame" x="0.0" y="164" width="320" height="160"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="IP:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e07-oU-wYj">
                                 <rect key="frame" x="26" y="77" width="21" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -125,6 +159,11 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lim-vy-2Dc">
+                                <rect key="frame" x="0.0" y="183" width="320" height="163"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -132,13 +171,13 @@
                     <connections>
                         <outlet property="IPLabel" destination="Yfx-92-8Fe" id="wRr-tb-k7P"/>
                         <outlet property="categoryLabel" destination="ImO-X1-Pdr" id="G5h-lj-wIw"/>
-                        <outlet property="detailView" destination="GUI-XL-WPg" id="j7r-Qd-phP"/>
+                        <outlet property="hostView" destination="lim-vy-2Dc" id="0b5-mN-0BN"/>
                         <outlet property="manufactoryLabel" destination="HlC-Mh-0bi" id="i4v-id-8ra"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ea9-cw-SXe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="738" y="-1140"/>
+            <point key="canvasLocation" x="190" y="-1236"/>
         </scene>
         <!--Chart View Controller - host-->
         <scene sceneID="FO0-ak-xf0">
@@ -207,11 +246,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ofq-gn-9Rm">
-                                <rect key="frame" x="32" y="173" width="268" height="160"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="IP：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Cb-Wo-cxg">
                                 <rect key="frame" x="32" y="74" width="51" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -255,7 +289,6 @@
                     <connections>
                         <outlet property="IPLabel" destination="nns-Ao-l0v" id="BSr-8X-IGk"/>
                         <outlet property="categoryLabel" destination="JpE-bd-J91" id="ARz-Hq-K7U"/>
-                        <outlet property="detailView" destination="ofq-gn-9Rm" id="3fw-0U-f0a"/>
                         <outlet property="manufactotyLabel" destination="Hh3-ps-gzz" id="6h9-KK-wct"/>
                     </connections>
                 </viewController>

@@ -10,6 +10,7 @@
 #import "NewsTableViewCell.h"
 #import "HostViewController.h"
 #import "AlarmViewController.h"
+#import "ItsmTableViewController.h"
 
 @interface NewsViewController ()
 {
@@ -21,9 +22,6 @@
     UIView *secondView;
     UIView *thirdView;
 }
-
-@property (strong,nonatomic) NSMutableArray *views;
-
 
 @end
 
@@ -45,15 +43,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.clearsSelectionOnViewWillAppear = YES;
     //初始化数组，为可变数组指定初始容量
 //    self.views = [NSMutableArray arrayWithCapacity:10];
     self.views = [[NSMutableArray alloc] init];
     newsName = [[NSMutableArray alloc] initWithObjects:@"host_dhcc",@"alarm_flows",@"msg_itsm", nil];
     newsTime = [[NSMutableArray alloc] initWithObjects:@"9:12",@"8:30",@"7:00", nil];
-//    newsName = @"host_dhcc";
-//    newsTime = @"9:28";
     
-    _eLineChartScale = 1;
+//    _eLineChartScale = 1;
     
     //第一个UIView _eLineChart---------------------------------------------------
     NSMutableArray *tempArray = [NSMutableArray array];
@@ -66,12 +63,12 @@
     _eLineChartData = [NSArray arrayWithArray:tempArray];
     /** The Actual frame for the line is half height of the frame you specified, because the bottom half is for the touch control, but it's empty */
     _eLineChart = [[ELineChart alloc] initWithFrame:CGRectMake(0, 30, CGRectGetWidth(self.view.frame), 107)];
-//    _eLineChart.layer.borderWidth = 1;
-//    _eLineChart.layer.borderColor = [[UIColor blueColor] CGColor];
     [_eLineChart setDelegate:self];
     [_eLineChart setDataSource:self];
+//    [_eLineChart setNeedsDisplay];
     
     [self.views addObject:_eLineChart];
+//    [yourViewController.view setNeedsDisplay]
 
     //第二个UIView---------------------------------------------------------------
     //CGRectMake(x, y, width, height)
@@ -90,6 +87,7 @@
     
     [secondView addSubview:fLabel];
     [secondView addSubview:ffLabel];
+//    [secondView setNeedsDisplay];
     
     [self.views addObject:secondView];
 
@@ -104,7 +102,6 @@
     sLabel.font = [UIFont fontWithName:nil size:50];
     
     [thirdView addSubview:sLabel];
-    
     [self.views addObject:thirdView];
 }
 
@@ -146,16 +143,9 @@
         NSString *path = [[NSBundle mainBundle] pathForResource:@"msg" ofType:@"png"];
         [cell.newsImages setImage:[UIImage imageWithContentsOfFile:path]];
     }
-//    NSString *path = [[NSBundle mainBundle] pathForResource:@"host" ofType:@"png"];
-//    [cell.newsImages setImage:[UIImage imageWithContentsOfFile:path]];
-//    cell.newsNames.text = [NSString stringWithFormat:@"%@",newsName];
-//    cell.newsTimes.text = [NSString stringWithFormat:@"%@",newsTime];
-//    [cell.chartView addSubview:[views objectAtIndex:indexPath.row]];
-
     
     // Configure the cell...
     UIView *newView = [self.views objectAtIndex:indexPath.row];
-    
     [cell.view addSubview:newView];
     
     return cell;
@@ -183,12 +173,12 @@
 {
     if ([segue.identifier isEqualToString:@"host"])
     {
-        UIViewController *viewController = segue.destinationViewController;
-        HostViewController *hostViewController = (HostViewController *)viewController;
-        hostViewController.ipLabelText = @"192.168.0.1";
-        hostViewController.categoryLabelText = @"主机";
-        hostViewController.manufactotyLabelText = @"华为";
-        hostViewController.informationView = [views objectAtIndex:0];
+//        UIViewController *viewController = segue.destinationViewController;
+//        HostViewController *hostViewController = (HostViewController *)viewController;
+//        hostViewController.ipLabelText = @"192.168.0.1";
+//        hostViewController.categoryLabelText = @"主机";
+//        hostViewController.manufactotyLabelText = @"华为";
+//        hostViewController.informationView = [views objectAtIndex:0];
     }
     else if ([segue.identifier isEqualToString: @"alarm"])
     {
@@ -197,7 +187,7 @@
         alarmViewController.IPLabelText = @"192.168.0.2";
         alarmViewController.categoryLabelText = @"服务器";
         alarmViewController.manufactoryLabeltext = @"IBM";
-        alarmViewController.informationView = [views objectAtIndex:1];
+//        alarmViewController.informationView = [views objectAtIndex:1];
     }
     
 }
