@@ -14,7 +14,10 @@
 
 @property (strong, nonatomic) ELineChart *eLineChart;
 @property (strong, nonatomic) NSArray *eLineChartData;
-@property (nonatomic) float eLineChartScale;
 @property (strong,nonatomic) NSMutableArray *views;
+
+@property (strong,nonatomic) NSString *IPLabelText;
+@property (strong,nonatomic) NSString *categoryLabelText;
+@property (strong,nonatomic) NSString *manufactoryLabelText;
 
 @end

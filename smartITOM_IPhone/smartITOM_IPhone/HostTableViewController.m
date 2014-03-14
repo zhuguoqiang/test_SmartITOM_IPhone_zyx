@@ -9,13 +9,18 @@
 #import "HostTableViewController.h"
 
 @interface HostTableViewController ()
+{
+    UIView *informationView;
+//    NSString *ipLabelText;
+//    NSString *categoryLabelText;
+//    NSString *manufactotyLabelText;
 
+}
 @end
 
 @implementation HostTableViewController
 @synthesize eLineChart = _eLineChart;
 @synthesize eLineChartData = _eLineChartData;
-@synthesize eLineChartScale = _eLineChartScale;
 @synthesize views;
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -31,10 +36,41 @@
 {
     [super viewDidLoad];
     self.views = [NSMutableArray arrayWithCapacity:20];
+//    ipLabelText = @"192.168.0.1";
+//    categoryLabelText = @"dhcc";
+//    manufactotyLabelText = @"MySql";
     
-    _eLineChartScale = 1;
+    /** Information Cell*/
+    informationView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 110)];
+    UILabel *iLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 0, 80, 40)];
+    iLabel.text = @"IP：";
+//    NSLog(@"%@",self.IPLabelText);
+    UILabel *iiLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 0, 200, 40)];
+//    iiLabel.text = ipLabelText;
+    iiLabel.text = self.IPLabelText;
     
-    /** Generate data for _eLineChart*/
+    UILabel *cLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 50, 80, 40)];
+    cLabel.text = @"类别：";
+    UILabel *ccLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 50, 200, 40)];
+//    ccLabel.text = categoryLabelText;
+    ccLabel.text = self.categoryLabelText;
+    
+    UILabel *mLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 100, 80, 40)];
+    mLabel.text = @"厂家：";
+    UILabel *mmLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 200, 40)];
+//    mmLabel.text = manufactotyLabelText;
+    mmLabel.text = self.manufactoryLabelText;
+    
+    [informationView addSubview:iLabel];
+    [informationView addSubview:iiLabel];
+    [informationView addSubview:cLabel];
+    [informationView addSubview:ccLabel];
+    [informationView addSubview:mLabel];
+    [informationView addSubview:mmLabel];
+    
+    [self.views addObject:informationView];
+    
+    /** Echart Cell*/
     NSMutableArray *tempArray = [NSMutableArray array];
     for (int i = 0 ; i < 300; i++)
     {
@@ -45,7 +81,9 @@
     _eLineChartData = [NSArray arrayWithArray:tempArray];
     
     /** The Actual frame for the line is half height of the frame you specified, because the bottom half is for the touch control, but it's empty */
-    _eLineChart = [[ELineChart alloc] initWithFrame:CGRectMake(0, 30, CGRectGetWidth(self.view.frame), 107)];
+    _eLineChart = [[ELineChart alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 180)];
+    _eLineChart.layer.borderColor = [[UIColor redColor] CGColor];
+    _eLineChart.layer.borderWidth = 1;
     [_eLineChart setDelegate:self];
     [_eLineChart setDataSource:self];
     

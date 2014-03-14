@@ -7,10 +7,7 @@
 //
 
 #import "NewsViewController.h"
-#import "NewsTableViewCell.h"
-#import "HostViewController.h"
-#import "AlarmViewController.h"
-#import "ItsmTableViewController.h"
+
 
 @interface NewsViewController ()
 {
@@ -75,8 +72,6 @@
     secondView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 209, 110)];
     secondView.layer.borderWidth = 1;
     secondView.layer.borderColor = [[UIColor blueColor] CGColor];
-//    frameView.layer.borderWidth = 1;
-//    frameView.layer.borderColor = [[UIColor whiteColor] CGColor];
     UILabel *fLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 0, 200, 50)];
     fLabel.text = @"Flowserve";
     fLabel.textColor = [UIColor redColor];
@@ -87,7 +82,6 @@
     
     [secondView addSubview:fLabel];
     [secondView addSubview:ffLabel];
-//    [secondView setNeedsDisplay];
     
     [self.views addObject:secondView];
 
@@ -173,12 +167,12 @@
 {
     if ([segue.identifier isEqualToString:@"host"])
     {
-//        UIViewController *viewController = segue.destinationViewController;
-//        HostViewController *hostViewController = (HostViewController *)viewController;
-//        hostViewController.ipLabelText = @"192.168.0.1";
-//        hostViewController.categoryLabelText = @"主机";
-//        hostViewController.manufactotyLabelText = @"华为";
-//        hostViewController.informationView = [views objectAtIndex:0];
+        UIViewController *viewController = segue.destinationViewController;
+        HostTableViewController *hostTableViewController = (HostTableViewController *)viewController;
+        hostTableViewController.IPLabelText = @"192.168.0.1";
+        hostTableViewController.categoryLabelText = @"主机";
+        hostTableViewController.manufactoryLabelText = @"华为";
+//        hostTableViewController.informationView = [views objectAtIndex:0];
     }
     else if ([segue.identifier isEqualToString: @"alarm"])
     {
@@ -186,7 +180,7 @@
         AlarmViewController *alarmViewController = (AlarmViewController *)viewController;
         alarmViewController.IPLabelText = @"192.168.0.2";
         alarmViewController.categoryLabelText = @"服务器";
-        alarmViewController.manufactoryLabeltext = @"IBM";
+        alarmViewController.manufactoryLabelText = @"IBM";
 //        alarmViewController.informationView = [views objectAtIndex:1];
     }
     

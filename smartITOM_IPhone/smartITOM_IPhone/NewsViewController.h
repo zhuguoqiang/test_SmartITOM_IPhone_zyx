@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "NewsTableViewCell.h"
 #import "ELineChart.h"
+#import "HostTableViewController.h"
+#import "AlarmViewController.h"
+#import "ItsmTableViewController.h"
 
 @interface NewsViewController : UITableViewController<ELineChartDataSource,ELineChartDelegate>
 

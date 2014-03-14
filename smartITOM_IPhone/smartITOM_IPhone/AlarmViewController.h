@@ -16,7 +16,7 @@
 
 @property (strong,nonatomic) NSString *IPLabelText;
 @property (strong,nonatomic) NSString *categoryLabelText;
-@property (strong,nonatomic) NSString *manufactoryLabeltext;
+@property (strong,nonatomic) NSString *manufactoryLabelText;
 //@property (strong,nonatomic) UIView *informationView;
 
 

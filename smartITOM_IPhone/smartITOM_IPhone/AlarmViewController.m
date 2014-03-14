@@ -31,7 +31,7 @@
 	
     self.IPLabel.text = self.IPLabelText;
     self.categoryLabel.text = self.categoryLabelText;
-    self.manufactotyLabel.text = self.manufactoryLabeltext;
+    self.manufactotyLabel.text = self.manufactoryLabelText;
 //    [self.detailView addSubview:self.informationView];
     
     alarmView = [[UIView alloc] initWithFrame:CGRectMake(0, 170, 320, 160)];
