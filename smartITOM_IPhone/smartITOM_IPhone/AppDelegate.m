@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  smartITOM_IPhone
 //
-//  Created by 朱国强 on 14-2-27.
+//  Created by Apple Developer on 14-2-27.
 //  Copyright (c) 2014年 Apple002. All rights reserved.
 //
 

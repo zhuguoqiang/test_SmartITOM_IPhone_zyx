@@ -27,14 +27,37 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-//    NSString *filePath = [self documentsPath:@"user.txt"];
-//    NSArray *user = [NSArray arrayWithContentsOfFile:filePath];
     self.username.text = @"admin";
     self.password.text = @"123456";
 //    self.password.text = [user objectAtIndex:1];
-    
     self.password.secureTextEntry = YES;
+    
+    //默认记住密码和自动登录
+    rememberPassword = YES;
+    automaticLogin = YES;
+    //设置记住密码和自动登录的图片
+    [self.btnRememberPassword setBackgroundImage:[UIImage imageNamed:@"checkbox_nor.png"] forState:UIControlStateNormal];
+    [self.btnRememberPassword setBackgroundImage:[UIImage imageNamed:@"checkbox_checked.png"] forState:UIControlStateSelected];
+    [self.btnRememberPassword setBackgroundImage:[UIImage imageNamed:@"checkbox_checked.png"] forState:UIControlStateHighlighted];
+    self.btnRememberPassword.adjustsImageWhenHighlighted = YES;
+    self.btnRememberPassword.selected = rememberPassword;
+    
+    [self.btnAutomaticLogin setBackgroundImage:[UIImage imageNamed:@"checkbox_nor.png"] forState:UIControlStateNormal];
+    [self.btnAutomaticLogin setBackgroundImage:[UIImage imageNamed:@"checkbox_checked.png"] forState:UIControlStateSelected];
+    [self.btnAutomaticLogin setBackgroundImage:[UIImage imageNamed:@"checkbox_checked.png"] forState:UIControlStateHighlighted];
+    self.btnAutomaticLogin.adjustsImageWhenHighlighted = YES;
+    self.btnAutomaticLogin.selected = automaticLogin;
+    
+    self.loginView.backgroundColor = [UIColor whiteColor];
+    //设置uiview的阴影
+    [[self.loginView layer] setShadowOffset:CGSizeMake(1, 1)];
+    [[self.loginView layer] setShadowRadius:5];
+    [[self.loginView layer] setShadowOpacity:1];
+    [[self.loginView layer] setShadowColor:[UIColor grayColor].CGColor];
+    //设置uiview的边框
+    [[self.loginView layer] setCornerRadius:5];
+    [[self.loginView layer] setBorderWidth:2];
+    [[self.loginView layer] setBorderColor:[UIColor blackColor].CGColor];
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,6 +77,20 @@
     [self.password resignFirstResponder];
 }
 
+//设置记住密码图片切换
+- (IBAction)rememberPassword:(UIButton *)sender
+{
+    rememberPassword = (!rememberPassword);
+    [self.btnRememberPassword setSelected:rememberPassword];
+}
+
+//设置自动登录图片切换
+- (IBAction)automaticLogin:(UIButton *)sender
+{
+    automaticLogin = (!automaticLogin);
+    [self.btnAutomaticLogin setSelected:automaticLogin];
+}
+
 
 - (IBAction)loginPress:(UIButton *)sender
 {
@@ -67,15 +104,12 @@
     if ([self.username.text isEqual:@"admin"] && [self.password.text isEqualToString:@"123456"])
     {
         //如果验证正确，则重新打开一个窗口
-        
         [self performSegueWithIdentifier:@"login" sender:self];
-        
         NSLog(@"登陆成功！\n");
-        
     }
     else if ([self.username.text isEqual:@""] || [self.password.text isEqual:@""])
     {
-        NSLog(@"用户名或密码为空！\n");
+        NSLog(@"用户名或密码不能为空！\n");
         UIAlertView *judgeLogin = [[UIAlertView alloc]initWithTitle:@"登录提示"
                                                             message:@"用户名或密码不能为空！"
                                                            delegate:self

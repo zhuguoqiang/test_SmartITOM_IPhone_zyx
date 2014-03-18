@@ -13,9 +13,6 @@
 {
     NSMutableArray *newsName;
     NSMutableArray *newsTime;
-//    NSString *newsName;
-//    NSString *newsTime;
-
     UIView *secondView;
     UIView *thirdView;
 }
@@ -42,12 +39,10 @@
     [super viewDidLoad];
     self.clearsSelectionOnViewWillAppear = YES;
     //初始化数组，为可变数组指定初始容量
-//    self.views = [NSMutableArray arrayWithCapacity:10];
+    //self.views = [NSMutableArray arrayWithCapacity:10];
     self.views = [[NSMutableArray alloc] init];
     newsName = [[NSMutableArray alloc] initWithObjects:@"host_dhcc",@"alarm_flows",@"msg_itsm", nil];
     newsTime = [[NSMutableArray alloc] initWithObjects:@"9:12",@"8:30",@"7:00", nil];
-    
-//    _eLineChartScale = 1;
     
     //第一个UIView _eLineChart---------------------------------------------------
     NSMutableArray *tempArray = [NSMutableArray array];
@@ -58,14 +53,11 @@
         [tempArray addObject:eLineChartDataModel];
     }
     _eLineChartData = [NSArray arrayWithArray:tempArray];
-    /** The Actual frame for the line is half height of the frame you specified, because the bottom half is for the touch control, but it's empty */
     _eLineChart = [[ELineChart alloc] initWithFrame:CGRectMake(0, 30, CGRectGetWidth(self.view.frame), 107)];
+
     [_eLineChart setDelegate:self];
     [_eLineChart setDataSource:self];
-//    [_eLineChart setNeedsDisplay];
-    
     [self.views addObject:_eLineChart];
-//    [yourViewController.view setNeedsDisplay]
 
     //第二个UIView---------------------------------------------------------------
     //CGRectMake(x, y, width, height)
@@ -82,14 +74,12 @@
     
     [secondView addSubview:fLabel];
     [secondView addSubview:ffLabel];
-    
     [self.views addObject:secondView];
 
     //第三个UIView---------------------------------------------------------------
     thirdView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 209, 110)];
     thirdView.layer.borderWidth = 1;
     thirdView.layer.borderColor = [[UIColor blueColor] CGColor];
-//    UILabel *sLabel = [[UILabel alloc] initWithFrame:thirdView.frame];
     UILabel *sLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 0, 200, 50)];
     sLabel.text = @"故障通知";
     sLabel.textColor = [UIColor redColor];
@@ -103,7 +93,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -120,6 +109,7 @@
     return views.count;
 }
 
+//为cell设置名称、时间、图标
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"NewsCell";
@@ -137,14 +127,14 @@
         NSString *path = [[NSBundle mainBundle] pathForResource:@"msg" ofType:@"png"];
         [cell.newsImages setImage:[UIImage imageWithContentsOfFile:path]];
     }
-    
-    // Configure the cell...
+
     UIView *newView = [self.views objectAtIndex:indexPath.row];
     [cell.view addSubview:newView];
     
     return cell;
 }
 
+//选择跳转的controller
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0)
@@ -162,7 +152,7 @@
 
 #pragma mark - Navigation
 
-// In a story board-based application, you will often want to do a little preparation before navigation
+//为host、alarm传递参数
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"host"])
@@ -195,8 +185,6 @@
 
 - (NSInteger) numberOfPointsPresentedEveryTime:(ELineChart *) eLineChart
 {
-    //    NSInteger num = 20 * (1.0 / _eLineChartScale);
-    //    NSLog(@"%d", num);
     return 30;
 }
 
@@ -221,46 +209,6 @@
     if (index >= [_eLineChartData count] || index < 0) return nil;
     return [_eLineChartData objectAtIndex:index];
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 
 
 @end

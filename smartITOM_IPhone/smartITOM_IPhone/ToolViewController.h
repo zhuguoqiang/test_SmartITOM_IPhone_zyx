@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ToolViewController : UITableViewController<UITableViewDataSource,UITableViewDelegate>
-
+@property(copy,nonatomic)   NSMutableArray *keys;
+@property(copy,nonatomic)   NSMutableDictionary *dataSource;
+@property(retain,nonatomic) UITableView*myTableView;
 @end
