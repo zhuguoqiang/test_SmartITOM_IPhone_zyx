@@ -11,6 +11,7 @@
 		18074E1E18C6CFEA00A96318 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 18074E1D18C6CFEA00A96318 /* icon.png */; };
 		182104D818D1451E00A2369D /* ItsmTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182104D718D1451E00A2369D /* ItsmTableViewController.m */; };
 		182104DB18D1458500A2369D /* ItsmCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 182104DA18D1458500A2369D /* ItsmCell.m */; };
+		1826CA3A18D9308E00C05EA0 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 1826CA3918D9308E00C05EA0 /* add.png */; };
 		18409F8F18CD67CF003D9632 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18409F8E18CD67CF003D9632 /* NewsViewController.m */; };
 		18409F9218CD68CE003D9632 /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18409F9118CD68CE003D9632 /* NewsTableViewCell.m */; };
 		18409F9618CD6A60003D9632 /* host.png in Resources */ = {isa = PBXBuildFile; fileRef = 18409F9318CD6A60003D9632 /* host.png */; };
@@ -25,7 +26,6 @@
 		18437E8A18BF21BF00F916D5 /* ELineChartDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18437E8418BF21BF00F916D5 /* ELineChartDataModel.m */; };
 		1856980318C96CEF00640F10 /* ToolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1856980218C96CEF00640F10 /* ToolViewController.m */; };
 		1856980618C9775000640F10 /* ToolDetilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1856980518C9775000640F10 /* ToolDetilViewController.m */; };
-		185F134218D038460087D14A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185F134118D038460087D14A /* QuartzCore.framework */; };
 		185F134518D038E00087D14A /* ELine.m in Sources */ = {isa = PBXBuildFile; fileRef = 185F134418D038E00087D14A /* ELine.m */; };
 		188F0D9018D2BFAB005E52BB /* HostTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F0D8F18D2BFAB005E52BB /* HostTableViewController.m */; };
 		188F0D9318D2C11D005E52BB /* HostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F0D9218D2C11D005E52BB /* HostCell.m */; };
@@ -35,6 +35,10 @@
 		189B180C18C5D073006F6370 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 189B180B18C5D073006F6370 /* logo.png */; };
 		18DFF03218D7F7AE0049AA6F /* checkbox_checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DFF03018D7F7AE0049AA6F /* checkbox_checked.png */; };
 		18DFF03318D7F7AE0049AA6F /* checkbox_nor.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DFF03118D7F7AE0049AA6F /* checkbox_nor.png */; };
+		18DFF03918D82FC20049AA6F /* Prefs.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DFF03818D82FC20049AA6F /* Prefs.m */; };
+		18DFF03C18D830190049AA6F /* CHKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DFF03B18D830190049AA6F /* CHKeychain.m */; };
+		18DFF03E18D830B80049AA6F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DFF03D18D830B80049AA6F /* Security.framework */; };
+		18DFF03F18D830EA0049AA6F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185F134118D038460087D14A /* QuartzCore.framework */; };
 		4A21E73818BF125600B13FE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A21E73718BF125600B13FE7 /* Foundation.framework */; };
 		4A21E73A18BF125600B13FE7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A21E73918BF125600B13FE7 /* CoreGraphics.framework */; };
 		4A21E73C18BF125600B13FE7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A21E73B18BF125600B13FE7 /* UIKit.framework */; };
@@ -45,8 +49,6 @@
 		4A21E75018BF125600B13FE7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A21E74F18BF125600B13FE7 /* Images.xcassets */; };
 		4A21E75818BF125600B13FE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A21E73718BF125600B13FE7 /* Foundation.framework */; };
 		4A21E75918BF125600B13FE7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A21E73B18BF125600B13FE7 /* UIKit.framework */; };
-		4A21E76118BF125600B13FE7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A21E75F18BF125600B13FE7 /* InfoPlist.strings */; };
-		4A21E76318BF125600B13FE7 /* smartITOM_IPhoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A21E76218BF125600B13FE7 /* smartITOM_IPhoneTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,7 @@
 		182104D718D1451E00A2369D /* ItsmTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItsmTableViewController.m; sourceTree = "<group>"; };
 		182104D918D1458500A2369D /* ItsmCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItsmCell.h; sourceTree = "<group>"; };
 		182104DA18D1458500A2369D /* ItsmCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItsmCell.m; sourceTree = "<group>"; };
+		1826CA3918D9308E00C05EA0 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		18409F8D18CD67CF003D9632 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		18409F8E18CD67CF003D9632 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		18409F9018CD68CE003D9632 /* NewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
@@ -106,6 +109,11 @@
 		189B180B18C5D073006F6370 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		18DFF03018D7F7AE0049AA6F /* checkbox_checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox_checked.png; sourceTree = "<group>"; };
 		18DFF03118D7F7AE0049AA6F /* checkbox_nor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox_nor.png; sourceTree = "<group>"; };
+		18DFF03718D82FC20049AA6F /* Prefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefs.h; sourceTree = "<group>"; };
+		18DFF03818D82FC20049AA6F /* Prefs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Prefs.m; sourceTree = "<group>"; };
+		18DFF03A18D830190049AA6F /* CHKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHKeychain.h; sourceTree = "<group>"; };
+		18DFF03B18D830190049AA6F /* CHKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHKeychain.m; sourceTree = "<group>"; };
+		18DFF03D18D830B80049AA6F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		4A21E73418BF125600B13FE7 /* smartITOM_IPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smartITOM_IPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A21E73718BF125600B13FE7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4A21E73918BF125600B13FE7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -120,9 +128,6 @@
 		4A21E74D18BF125600B13FE7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4A21E74F18BF125600B13FE7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4A21E75518BF125600B13FE7 /* smartITOM_IPhoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = smartITOM_IPhoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4A21E75E18BF125600B13FE7 /* smartITOM_IPhoneTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "smartITOM_IPhoneTests-Info.plist"; sourceTree = "<group>"; };
-		4A21E76018BF125600B13FE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		4A21E76218BF125600B13FE7 /* smartITOM_IPhoneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = smartITOM_IPhoneTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +135,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				185F134218D038460087D14A /* QuartzCore.framework in Frameworks */,
+				18DFF03F18D830EA0049AA6F /* QuartzCore.framework in Frameworks */,
+				18DFF03E18D830B80049AA6F /* Security.framework in Frameworks */,
 				4A21E73C18BF125600B13FE7 /* UIKit.framework in Frameworks */,
 				4A21E73818BF125600B13FE7 /* Foundation.framework in Frameworks */,
 				4A21E73A18BF125600B13FE7 /* CoreGraphics.framework in Frameworks */,
@@ -169,6 +175,7 @@
 		18409F9918CD6A82003D9632 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				1826CA3918D9308E00C05EA0 /* add.png */,
 				18DFF03018D7F7AE0049AA6F /* checkbox_checked.png */,
 				18DFF03118D7F7AE0049AA6F /* checkbox_nor.png */,
 				189B180B18C5D073006F6370 /* logo.png */,
@@ -236,7 +243,6 @@
 			isa = PBXGroup;
 			children = (
 				4A21E73D18BF125600B13FE7 /* smartITOM_IPhone */,
-				4A21E75C18BF125600B13FE7 /* smartITOM_IPhoneTests */,
 				4A21E73618BF125600B13FE7 /* Frameworks */,
 				4A21E73518BF125600B13FE7 /* Products */,
 			);
@@ -254,6 +260,7 @@
 		4A21E73618BF125600B13FE7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18DFF03D18D830B80049AA6F /* Security.framework */,
 				185F134118D038460087D14A /* QuartzCore.framework */,
 				4A21E73718BF125600B13FE7 /* Foundation.framework */,
 				4A21E73918BF125600B13FE7 /* CoreGraphics.framework */,
@@ -272,6 +279,10 @@
 				4A21E74D18BF125600B13FE7 /* ViewController.m */,
 				189B180118C5ADD2006F6370 /* LoginViewController.h */,
 				189B180218C5ADD2006F6370 /* LoginViewController.m */,
+				18DFF03718D82FC20049AA6F /* Prefs.h */,
+				18DFF03818D82FC20049AA6F /* Prefs.m */,
+				18DFF03A18D830190049AA6F /* CHKeychain.h */,
+				18DFF03B18D830190049AA6F /* CHKeychain.m */,
 				4A21E74F18BF125600B13FE7 /* Images.xcassets */,
 				18951EAC18D6DB1700710DDC /* toolView */,
 				18951EAD18D6DB3F00710DDC /* equipmentView */,
@@ -292,24 +303,6 @@
 				4A21E74018BF125600B13FE7 /* InfoPlist.strings */,
 				4A21E74318BF125600B13FE7 /* main.m */,
 				4A21E74518BF125600B13FE7 /* smartITOM_IPhone-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		4A21E75C18BF125600B13FE7 /* smartITOM_IPhoneTests */ = {
-			isa = PBXGroup;
-			children = (
-				4A21E76218BF125600B13FE7 /* smartITOM_IPhoneTests.m */,
-				4A21E75D18BF125600B13FE7 /* Supporting Files */,
-			);
-			path = smartITOM_IPhoneTests;
-			sourceTree = "<group>";
-		};
-		4A21E75D18BF125600B13FE7 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				4A21E75E18BF125600B13FE7 /* smartITOM_IPhoneTests-Info.plist */,
-				4A21E75F18BF125600B13FE7 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -393,6 +386,7 @@
 				18409F9818CD6A60003D9632 /* msg.png in Resources */,
 				18409F9618CD6A60003D9632 /* host.png in Resources */,
 				18DFF03218D7F7AE0049AA6F /* checkbox_checked.png in Resources */,
+				1826CA3A18D9308E00C05EA0 /* add.png in Resources */,
 				18409F9718CD6A60003D9632 /* alarm.png in Resources */,
 				4A21E75018BF125600B13FE7 /* Images.xcassets in Resources */,
 				189B180818C5C5EB006F6370 /* user.txt in Resources */,
@@ -408,7 +402,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A21E76118BF125600B13FE7 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,9 +424,11 @@
 				1856980318C96CEF00640F10 /* ToolViewController.m in Sources */,
 				182104D818D1451E00A2369D /* ItsmTableViewController.m in Sources */,
 				18437E8518BF21BF00F916D5 /* EChartCell.m in Sources */,
+				18DFF03918D82FC20049AA6F /* Prefs.m in Sources */,
 				189B180318C5ADD2006F6370 /* LoginViewController.m in Sources */,
 				18437E8A18BF21BF00F916D5 /* ELineChartDataModel.m in Sources */,
 				4A21E74418BF125600B13FE7 /* main.m in Sources */,
+				18DFF03C18D830190049AA6F /* CHKeychain.m in Sources */,
 				18409FA318CD97BA003D9632 /* AlarmViewController.m in Sources */,
 				18409F9218CD68CE003D9632 /* NewsTableViewCell.m in Sources */,
 				18437E8918BF21BF00F916D5 /* ELineChart.m in Sources */,
@@ -447,7 +442,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A21E76318BF125600B13FE7 /* smartITOM_IPhoneTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,14 +460,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				4A21E74118BF125600B13FE7 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		4A21E75F18BF125600B13FE7 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4A21E76018BF125600B13FE7 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

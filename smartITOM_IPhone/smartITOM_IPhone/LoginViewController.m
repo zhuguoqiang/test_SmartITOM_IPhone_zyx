@@ -8,6 +8,8 @@
 
 #import "LoginViewController.h"
 #import "EChartViewController.h"
+#import "Prefs.h"
+#import "CHKeychain.h"
 
 @interface LoginViewController ()
 
@@ -105,7 +107,7 @@
     {
         //如果验证正确，则重新打开一个窗口
         [self performSegueWithIdentifier:@"login" sender:self];
-        NSLog(@"登陆成功！\n");
+        NSLog(@"登录成功！\n");
     }
     else if ([self.username.text isEqual:@""] || [self.password.text isEqual:@""])
     {
@@ -126,9 +128,17 @@
                                      cancelButtonTitle:@"取消"
                                      otherButtonTitles:@"确定",nil];
         [judgeLogin show];
-        
     }
     
+    //登录成功之后记录密码
+	if (rememberPassword) {
+		NSMutableDictionary *usernamepasswordKVPairs = [NSMutableDictionary dictionary];
+		[usernamepasswordKVPairs setObject:self.username.text forKey:KEY_USERNAME];
+		[usernamepasswordKVPairs setObject:self.password.text forKey:KEY_PASSWORD];
+		[CHKeychain save:KEY_USERNAME_PASSWORD data:usernamepasswordKVPairs];
+	}else {
+		[CHKeychain delete:KEY_USERNAME_PASSWORD];
+	}
 
 }
 
