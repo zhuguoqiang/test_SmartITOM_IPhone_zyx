@@ -11,9 +11,9 @@
 
 @interface ToolViewController ()
 {
-    NSArray *array;
-    //    NSArray *array1;
-    //    NSArray *array2;
+//    NSArray *array;
+    NSMutableArray *array1;
+    NSMutableArray *array2;
 }
 @end
 
@@ -31,9 +31,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    array = [NSArray arrayWithObjects:@"Shell工具", @"SQL", @"telnet", @"设置", nil];
-    //    array1 = [NSArray arrayWithObjects:@"Shell工具", @"SQL", @"telnet", @"设置", nil];
-    //    array2 = [NSArray arrayWithObjects:@"意见反馈", @"关于我们", nil];
+//    array = [NSArray arrayWithObjects:@"Shell工具", @"SQL", @"telnet", @"设置", nil];
+    array1 = [NSMutableArray arrayWithObjects:@"Shell工具", @"SQL", @"telnet", @"设置", nil];
+    array2 = [NSMutableArray arrayWithObjects:@"意见反馈", @"关于我们", nil];
     
 }
 
@@ -53,14 +53,17 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // 返回组的数量
-    return 3;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // 返回section组的子项数量
-    return array.count;
-    //    return array1.count+array2.count;
+    if (section == 0) {
+        return array1.count;
+    }else{
+        return array2.count;
+    }
 }
 
 //返回当前分组的组名
@@ -82,8 +85,11 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     //设置cell内容
-    cell.textLabel.text = [array objectAtIndex:indexPath.row];
-    cell.detailTextLabel.text = [array objectAtIndex:indexPath.row];
+    if (indexPath.section == 0) {
+        cell.textLabel.text = [array1 objectAtIndex:indexPath.row];
+    }else{
+        cell.textLabel.text = [array2 objectAtIndex:indexPath.row];
+    }
     
     return cell;
 }
@@ -134,16 +140,30 @@
 //通过 segue跳转的 回调方法
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+//    if ([segue.identifier isEqualToString:@"TableCellToDetil"])
+//    {
+//        NSIndexPath *path = [self.tableView indexPathForSelectedRow];
+//        NSInteger row = path.row;
+//        NSString *title = [NSString stringWithFormat:@"第%d组, %@",path.section+1,
+//                           [array objectAtIndex:row]];
+//        [segue.destinationViewController showTitle:title];
+//    }
     if ([segue.identifier isEqualToString:@"TableCellToDetil"])
     {
         NSIndexPath *path = [self.tableView indexPathForSelectedRow];
         NSInteger row = path.row;
-        NSString *title = [NSString stringWithFormat:@"第%d组, %@",path.section+1,
-                           [array objectAtIndex:row]];
-        [segue.destinationViewController showTitle:title];
+        if (path.section == 0) {
+            NSString *title = [NSString stringWithFormat:@"第%d组, %@",path.section+1,
+                               [array1 objectAtIndex:row]];
+            [segue.destinationViewController showTitle:title];
+        }else{
+            NSString *title = [NSString stringWithFormat:@"第%d组, %@",path.section+1,
+                               [array2 objectAtIndex:row]];
+            [segue.destinationViewController showTitle:title];
+        }
+        
+        
     }
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
 
 
