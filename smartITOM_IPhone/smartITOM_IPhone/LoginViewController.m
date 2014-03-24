@@ -60,6 +60,26 @@
     [[self.loginView layer] setCornerRadius:5];
     [[self.loginView layer] setBorderWidth:2];
     [[self.loginView layer] setBorderColor:[UIColor blackColor].CGColor];
+    
+    //用户名添加软键盘的清空、空格和完成键
+    UIToolbar * usernameView = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 30)];
+    [usernameView setBarStyle:UIBarStyleBlack];
+    UIBarButtonItem * clearUsernameButton = [[UIBarButtonItem alloc]initWithTitle:@"清空" style:UIBarButtonItemStyleBordered target:self action:@selector(clearUsername)];
+    UIBarButtonItem * btnSpace1 = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+    UIBarButtonItem * doneUsernameButton = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:UIBarButtonItemStyleDone target:self action:@selector(dismissKeyBoard)];
+    NSArray * usernameArray = [NSArray arrayWithObjects:clearUsernameButton,btnSpace1,doneUsernameButton,nil];
+    [usernameView setItems:usernameArray];
+    [self.username setInputAccessoryView:usernameView];
+    
+    //密码添加软键盘的清空、空格和完成键
+    UIToolbar * passwordView = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 30)];
+    [passwordView setBarStyle:UIBarStyleBlack];
+    UIBarButtonItem * clearPasswordButton = [[UIBarButtonItem alloc]initWithTitle:@"清空" style:UIBarButtonItemStyleBordered target:self action:@selector(clearPassword)];
+    UIBarButtonItem * btnSpace2 = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+    UIBarButtonItem * donePasswordButton = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:UIBarButtonItemStyleDone target:self action:@selector(dismissKeyBoard)];
+    NSArray * passwordArray = [NSArray arrayWithObjects:clearPasswordButton,btnSpace2,donePasswordButton,nil];
+    [passwordView setItems:passwordArray];
+    [self.password setInputAccessoryView:passwordView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,16 +88,35 @@
     // Dispose of any resources that can be recreated.
 }
 
+//清空用户名输入内容
+- (IBAction)clearUsername
+{
+    self.username.text = @"";
+}
+
+//清空密码输入内容
+- (IBAction)clearPassword
+{
+    self.password.text = @"";
+}
+
+//退出键盘
+- (IBAction)dismissKeyBoard
+{
+    [self.username resignFirstResponder];
+    [self.password resignFirstResponder];
+}
+
 - (IBAction)textFieldDoneEditing:(id)sender
 {
     [sender resignFirstResponder];
 }
 
-- (IBAction)backgroundTip:(id)sender
-{
-    [self.username resignFirstResponder];
-    [self.password resignFirstResponder];
-}
+//- (IBAction)backgroundTip:(id)sender
+//{
+//    [self.username resignFirstResponder];
+//    [self.password resignFirstResponder];
+//}
 
 //设置记住密码图片切换
 - (IBAction)rememberPassword:(UIButton *)sender

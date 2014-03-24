@@ -7,11 +7,9 @@
 //
 
 #import "ToolViewController.h"
-#import "ToolDetilViewController.h"
 
 @interface ToolViewController ()
 {
-//    NSArray *array;
     NSMutableArray *array1;
     NSMutableArray *array2;
 }
@@ -41,6 +39,33 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//选择跳转的controller
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            [self performSegueWithIdentifier:@"ShellTool" sender:self];
+        }
+        else if (indexPath.row == 1) {
+            [self performSegueWithIdentifier:@"SQL" sender:self];
+        }
+        else if (indexPath.row == 2) {
+            [self performSegueWithIdentifier:@"Telnet" sender:self];
+        }
+        else {
+            [self performSegueWithIdentifier:@"Settings" sender:self];
+        }
+    }
+    else if (indexPath.section == 1){
+        if (indexPath.row == 0) {
+            [self performSegueWithIdentifier:@"Feedback" sender:self];
+        }
+        else if (indexPath.row == 1){
+            [self performSegueWithIdentifier:@"AboutUs" sender:self];
+        }
+    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -94,76 +119,54 @@
     return cell;
 }
 
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
- {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- }
- else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
-
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
 //通过 segue跳转的 回调方法
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if ([segue.identifier isEqualToString:@"ShellTool"]) {
+        UIViewController *viewController = (UIViewController *)segue.destinationViewController;
+//        secondView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 209, 110)];
+//        secondView.layer.borderWidth = 1;
+//        secondView.layer.borderColor = [[UIColor blueColor] CGColor];
+        UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, 320, 160)];
+        textView.text = @"SSH:ipad@10.10.152.18";
+        textView.layer.borderWidth = 1;
+        textView.layer.borderColor = [[UIColor blueColor] CGColor];
+        [viewController.view addSubview:textView];
+    }
+    else if ([segue.identifier isEqualToString:@"Telnet"]) {
+        UIViewController *viewController = (UIViewController *)segue.destinationViewController;
+        UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, 320, 160)];
+        textView.text = @"telnet 61.152.158.132 23";
+        textView.layer.borderWidth = 1;
+        textView.layer.borderColor = [[UIColor blueColor] CGColor];
+        [viewController.view addSubview:textView];
+    }
+    else if ([segue.identifier isEqualToString:@"Feedback"]) {
+        UIViewController *viewController = (UIViewController *)segue.destinationViewController;
+        UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, 320, 160)];
+        textView.text = @"反馈意见";
+        textView.layer.borderWidth = 1;
+        textView.layer.borderColor = [[UIColor blueColor] CGColor];
+        [viewController.view addSubview:textView];
+    }
+    
 //    if ([segue.identifier isEqualToString:@"TableCellToDetil"])
 //    {
 //        NSIndexPath *path = [self.tableView indexPathForSelectedRow];
 //        NSInteger row = path.row;
-//        NSString *title = [NSString stringWithFormat:@"第%d组, %@",path.section+1,
-//                           [array objectAtIndex:row]];
-//        [segue.destinationViewController showTitle:title];
+//        if (path.section == 0) {
+//            NSString *title = [NSString stringWithFormat:@"第%d组, %@",path.section+1,
+//                               [array1 objectAtIndex:row]];
+//            [segue.destinationViewController showTitle:title];
+//        }else{
+//            NSString *title = [NSString stringWithFormat:@"第%d组, %@",path.section+1,
+//                               [array2 objectAtIndex:row]];
+//            [segue.destinationViewController showTitle:title];
+//        }
 //    }
-    if ([segue.identifier isEqualToString:@"TableCellToDetil"])
-    {
-        NSIndexPath *path = [self.tableView indexPathForSelectedRow];
-        NSInteger row = path.row;
-        if (path.section == 0) {
-            NSString *title = [NSString stringWithFormat:@"第%d组, %@",path.section+1,
-                               [array1 objectAtIndex:row]];
-            [segue.destinationViewController showTitle:title];
-        }else{
-            NSString *title = [NSString stringWithFormat:@"第%d组, %@",path.section+1,
-                               [array2 objectAtIndex:row]];
-            [segue.destinationViewController showTitle:title];
-        }
-        
-        
-    }
 }
 
 

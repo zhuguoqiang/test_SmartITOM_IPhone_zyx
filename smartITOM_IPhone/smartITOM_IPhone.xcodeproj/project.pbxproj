@@ -24,7 +24,6 @@
 		18437E8918BF21BF00F916D5 /* ELineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 18437E8218BF21BF00F916D5 /* ELineChart.m */; };
 		18437E8A18BF21BF00F916D5 /* ELineChartDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18437E8418BF21BF00F916D5 /* ELineChartDataModel.m */; };
 		1856980318C96CEF00640F10 /* ToolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1856980218C96CEF00640F10 /* ToolViewController.m */; };
-		1856980618C9775000640F10 /* ToolDetilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1856980518C9775000640F10 /* ToolDetilViewController.m */; };
 		185F134518D038E00087D14A /* ELine.m in Sources */ = {isa = PBXBuildFile; fileRef = 185F134418D038E00087D14A /* ELine.m */; };
 		188F0D9018D2BFAB005E52BB /* HostTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F0D8F18D2BFAB005E52BB /* HostTableViewController.m */; };
 		188F0D9318D2C11D005E52BB /* HostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F0D9218D2C11D005E52BB /* HostCell.m */; };
@@ -32,6 +31,11 @@
 		189B180318C5ADD2006F6370 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189B180218C5ADD2006F6370 /* LoginViewController.m */; };
 		189B180818C5C5EB006F6370 /* user.txt in Resources */ = {isa = PBXBuildFile; fileRef = 189B180718C5C5EB006F6370 /* user.txt */; };
 		189B180C18C5D073006F6370 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 189B180B18C5D073006F6370 /* logo.png */; };
+		18D9C76518DFCA1500EC8610 /* SQLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D9C76418DFCA1500EC8610 /* SQLViewController.m */; };
+		18D9C76818DFEDAE00EC8610 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D9C76718DFEDAE00EC8610 /* SettingsViewController.m */; };
+		18D9C76B18E00FEF00EC8610 /* SettingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D9C76A18E00FEF00EC8610 /* SettingsTableViewCell.m */; };
+		18D9C76E18E01A5B00EC8610 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D9C76D18E01A5B00EC8610 /* FeedbackViewController.m */; };
+		18D9C77018E01FA400EC8610 /* aboutUs.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D9C76F18E01FA400EC8610 /* aboutUs.png */; };
 		18DFF03218D7F7AE0049AA6F /* checkbox_checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DFF03018D7F7AE0049AA6F /* checkbox_checked.png */; };
 		18DFF03318D7F7AE0049AA6F /* checkbox_nor.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DFF03118D7F7AE0049AA6F /* checkbox_nor.png */; };
 		18DFF03918D82FC20049AA6F /* Prefs.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DFF03818D82FC20049AA6F /* Prefs.m */; };
@@ -40,6 +44,8 @@
 		18DFF03F18D830EA0049AA6F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185F134118D038460087D14A /* QuartzCore.framework */; };
 		18E20BB718DBF10100865B83 /* AttentionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E20BB618DBF10100865B83 /* AttentionViewController.m */; };
 		18E20BBD18DC1BFB00865B83 /* AttentionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E20BBC18DC1BFB00865B83 /* AttentionTableViewCell.m */; };
+		18E20BC318DC2DA600865B83 /* AddAttentionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E20BC218DC2DA600865B83 /* AddAttentionViewController.m */; };
+		18E20BC618DC2EAE00865B83 /* AddAttentionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E20BC518DC2EAE00865B83 /* AddAttentionCell.m */; };
 		4A21E73818BF125600B13FE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A21E73718BF125600B13FE7 /* Foundation.framework */; };
 		4A21E73A18BF125600B13FE7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A21E73918BF125600B13FE7 /* CoreGraphics.framework */; };
 		4A21E73C18BF125600B13FE7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A21E73B18BF125600B13FE7 /* UIKit.framework */; };
@@ -92,8 +98,6 @@
 		18437E8418BF21BF00F916D5 /* ELineChartDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELineChartDataModel.m; sourceTree = "<group>"; };
 		1856980118C96CEF00640F10 /* ToolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolViewController.h; sourceTree = "<group>"; };
 		1856980218C96CEF00640F10 /* ToolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolViewController.m; sourceTree = "<group>"; };
-		1856980418C9775000640F10 /* ToolDetilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolDetilViewController.h; sourceTree = "<group>"; };
-		1856980518C9775000640F10 /* ToolDetilViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolDetilViewController.m; sourceTree = "<group>"; };
 		185F134118D038460087D14A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		185F134318D038E00087D14A /* ELine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELine.h; sourceTree = "<group>"; };
 		185F134418D038E00087D14A /* ELine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELine.m; sourceTree = "<group>"; };
@@ -106,6 +110,15 @@
 		189B180218C5ADD2006F6370 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		189B180718C5C5EB006F6370 /* user.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = user.txt; sourceTree = "<group>"; };
 		189B180B18C5D073006F6370 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		18D9C76318DFCA1500EC8610 /* SQLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLViewController.h; sourceTree = "<group>"; };
+		18D9C76418DFCA1500EC8610 /* SQLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLViewController.m; sourceTree = "<group>"; };
+		18D9C76618DFEDAE00EC8610 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		18D9C76718DFEDAE00EC8610 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		18D9C76918E00FEF00EC8610 /* SettingsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewCell.h; sourceTree = "<group>"; };
+		18D9C76A18E00FEF00EC8610 /* SettingsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewCell.m; sourceTree = "<group>"; };
+		18D9C76C18E01A5B00EC8610 /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
+		18D9C76D18E01A5B00EC8610 /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
+		18D9C76F18E01FA400EC8610 /* aboutUs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aboutUs.png; sourceTree = "<group>"; };
 		18DFF03018D7F7AE0049AA6F /* checkbox_checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox_checked.png; sourceTree = "<group>"; };
 		18DFF03118D7F7AE0049AA6F /* checkbox_nor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox_nor.png; sourceTree = "<group>"; };
 		18DFF03718D82FC20049AA6F /* Prefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefs.h; sourceTree = "<group>"; };
@@ -117,6 +130,10 @@
 		18E20BB618DBF10100865B83 /* AttentionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionViewController.m; sourceTree = "<group>"; };
 		18E20BBB18DC1BFB00865B83 /* AttentionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttentionTableViewCell.h; sourceTree = "<group>"; };
 		18E20BBC18DC1BFB00865B83 /* AttentionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionTableViewCell.m; sourceTree = "<group>"; };
+		18E20BC118DC2DA600865B83 /* AddAttentionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAttentionViewController.h; sourceTree = "<group>"; };
+		18E20BC218DC2DA600865B83 /* AddAttentionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAttentionViewController.m; sourceTree = "<group>"; };
+		18E20BC418DC2EAE00865B83 /* AddAttentionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAttentionCell.h; sourceTree = "<group>"; };
+		18E20BC518DC2EAE00865B83 /* AddAttentionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAttentionCell.m; sourceTree = "<group>"; };
 		4A21E73418BF125600B13FE7 /* smartITOM_IPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smartITOM_IPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A21E73718BF125600B13FE7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4A21E73918BF125600B13FE7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -178,6 +195,7 @@
 		18409F9918CD6A82003D9632 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				18D9C76F18E01FA400EC8610 /* aboutUs.png */,
 				1826CA3918D9308E00C05EA0 /* add.png */,
 				18DFF03018D7F7AE0049AA6F /* checkbox_checked.png */,
 				18DFF03118D7F7AE0049AA6F /* checkbox_nor.png */,
@@ -227,8 +245,6 @@
 			children = (
 				1856980118C96CEF00640F10 /* ToolViewController.h */,
 				1856980218C96CEF00640F10 /* ToolViewController.m */,
-				1856980418C9775000640F10 /* ToolDetilViewController.h */,
-				1856980518C9775000640F10 /* ToolDetilViewController.m */,
 			);
 			name = toolView;
 			sourceTree = "<group>";
@@ -242,6 +258,32 @@
 				18E20BBC18DC1BFB00865B83 /* AttentionTableViewCell.m */,
 			);
 			name = attentionView;
+			sourceTree = "<group>";
+		};
+		18E20BBF18DC2D1100865B83 /* subAttentionView */ = {
+			isa = PBXGroup;
+			children = (
+				18E20BC118DC2DA600865B83 /* AddAttentionViewController.h */,
+				18E20BC218DC2DA600865B83 /* AddAttentionViewController.m */,
+				18E20BC418DC2EAE00865B83 /* AddAttentionCell.h */,
+				18E20BC518DC2EAE00865B83 /* AddAttentionCell.m */,
+			);
+			name = subAttentionView;
+			sourceTree = "<group>";
+		};
+		18E20BC018DC2D4300865B83 /* subToolView */ = {
+			isa = PBXGroup;
+			children = (
+				18D9C76318DFCA1500EC8610 /* SQLViewController.h */,
+				18D9C76418DFCA1500EC8610 /* SQLViewController.m */,
+				18D9C76618DFEDAE00EC8610 /* SettingsViewController.h */,
+				18D9C76718DFEDAE00EC8610 /* SettingsViewController.m */,
+				18D9C76918E00FEF00EC8610 /* SettingsTableViewCell.h */,
+				18D9C76A18E00FEF00EC8610 /* SettingsTableViewCell.m */,
+				18D9C76C18E01A5B00EC8610 /* FeedbackViewController.h */,
+				18D9C76D18E01A5B00EC8610 /* FeedbackViewController.m */,
+			);
+			name = subToolView;
 			sourceTree = "<group>";
 		};
 		4A21E72B18BF125600B13FE7 = {
@@ -289,10 +331,12 @@
 				18DFF03A18D830190049AA6F /* CHKeychain.h */,
 				18DFF03B18D830190049AA6F /* CHKeychain.m */,
 				4A21E74F18BF125600B13FE7 /* Images.xcassets */,
-				18E20BB418DBF09600865B83 /* attentionView */,
-				18951EAC18D6DB1700710DDC /* toolView */,
 				18409F9A18CD8DA2003D9632 /* newsView */,
 				182104DC18D14A9E00A2369D /* subNewsView */,
+				18E20BB418DBF09600865B83 /* attentionView */,
+				18E20BBF18DC2D1100865B83 /* subAttentionView */,
+				18951EAC18D6DB1700710DDC /* toolView */,
+				18E20BC018DC2D4300865B83 /* subToolView */,
 				1856980018C9599300640F10 /* EChart */,
 				18409F9918CD6A82003D9632 /* image */,
 				4A21E73E18BF125600B13FE7 /* Supporting Files */,
@@ -392,6 +436,7 @@
 				18409F9618CD6A60003D9632 /* host.png in Resources */,
 				18DFF03218D7F7AE0049AA6F /* checkbox_checked.png in Resources */,
 				1826CA3A18D9308E00C05EA0 /* add.png in Resources */,
+				18D9C77018E01FA400EC8610 /* aboutUs.png in Resources */,
 				18409F9718CD6A60003D9632 /* alarm.png in Resources */,
 				4A21E75018BF125600B13FE7 /* Images.xcassets in Resources */,
 				189B180818C5C5EB006F6370 /* user.txt in Resources */,
@@ -419,12 +464,14 @@
 			files = (
 				188F0D9018D2BFAB005E52BB /* HostTableViewController.m in Sources */,
 				18437E8618BF21BF00F916D5 /* EChartViewController.m in Sources */,
+				18D9C76B18E00FEF00EC8610 /* SettingsTableViewCell.m in Sources */,
 				185F134518D038E00087D14A /* ELine.m in Sources */,
 				4A21E74E18BF125600B13FE7 /* ViewController.m in Sources */,
+				18D9C76518DFCA1500EC8610 /* SQLViewController.m in Sources */,
 				18E20BBD18DC1BFB00865B83 /* AttentionTableViewCell.m in Sources */,
+				18E20BC318DC2DA600865B83 /* AddAttentionViewController.m in Sources */,
 				18409FA018CD8E78003D9632 /* HostViewController.m in Sources */,
 				4A21E74818BF125600B13FE7 /* AppDelegate.m in Sources */,
-				1856980618C9775000640F10 /* ToolDetilViewController.m in Sources */,
 				188F0D9318D2C11D005E52BB /* HostCell.m in Sources */,
 				1856980318C96CEF00640F10 /* ToolViewController.m in Sources */,
 				182104D818D1451E00A2369D /* ItsmTableViewController.m in Sources */,
@@ -434,6 +481,7 @@
 				18437E8A18BF21BF00F916D5 /* ELineChartDataModel.m in Sources */,
 				4A21E74418BF125600B13FE7 /* main.m in Sources */,
 				18DFF03C18D830190049AA6F /* CHKeychain.m in Sources */,
+				18E20BC618DC2EAE00865B83 /* AddAttentionCell.m in Sources */,
 				18409FA318CD97BA003D9632 /* AlarmViewController.m in Sources */,
 				18409F9218CD68CE003D9632 /* NewsTableViewCell.m in Sources */,
 				18437E8918BF21BF00F916D5 /* ELineChart.m in Sources */,
@@ -441,6 +489,8 @@
 				18409F8F18CD67CF003D9632 /* NewsViewController.m in Sources */,
 				182104DB18D1458500A2369D /* ItsmCell.m in Sources */,
 				18E20BB718DBF10100865B83 /* AttentionViewController.m in Sources */,
+				18D9C76E18E01A5B00EC8610 /* FeedbackViewController.m in Sources */,
+				18D9C76818DFEDAE00EC8610 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

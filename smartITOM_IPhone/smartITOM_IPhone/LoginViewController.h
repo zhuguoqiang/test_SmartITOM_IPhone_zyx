@@ -21,7 +21,6 @@
 
 - (IBAction)loginPress:(UIButton *)sender;
 - (IBAction)textFieldDoneEditing:(id)sender;
-- (IBAction)backgroundTip:(id)sender;
 - (IBAction)rememberPassword:(UIButton *)sender;
 - (IBAction)automaticLogin:(UIButton *)sender;
 @end
