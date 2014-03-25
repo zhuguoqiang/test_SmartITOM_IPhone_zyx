@@ -35,6 +35,10 @@
     equipments = [[NSMutableArray alloc] initWithObjects:@"思科路由器MD131", @"联想主机E49", @"MySql", @"iMac", @"IBM服务器", nil];
     reports = [[NSMutableArray alloc] initWithObjects:@"Mem Top 10", @"Cpu Top 10", @"告警 Top 10", nil];
     
+    self.addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                   target:self
+                                                                   action:@selector(showSheet)];
+    self.navigationItem.rightBarButtonItem = self.addButton;
 }
 
 - (void)didReceiveMemoryWarning
@@ -99,6 +103,56 @@
         [self performSegueWithIdentifier:@"Reports" sender:self];
     }
 }
+
+
+- (IBAction)showSheet
+{
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"选择添加内容"
+                                                             delegate:self
+                                                    cancelButtonTitle:@"取消"
+                                               destructiveButtonTitle:@"确定"
+//                                                    cancelButtonTitle:nil
+//                                               destructiveButtonTitle:@"取消"
+                                                    otherButtonTitles:@"设备", @"报表", nil];
+    //actionSheet不同的格式
+    actionSheet.actionSheetStyle = UIActionSheetStyleAutomatic;
+//    actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+//    actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+//    actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
+    [actionSheet showInView:self.view];
+}
+
+-(void)showAlert:(NSString *)msg {
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:@"Action Sheet选择项"
+                          message:msg
+                          delegate:self
+                          cancelButtonTitle:@"确定"
+                          otherButtonTitles: nil];
+    [alert show];
+}
+
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        [self showAlert:@"确定"];
+    }
+    else if(buttonIndex == 1) {
+        [self performSegueWithIdentifier:@"AddEquipment" sender:self];
+    }
+    else if(buttonIndex == 2) {
+        [self performSegueWithIdentifier:@"AddReport" sender:self];
+    }
+    else if(buttonIndex == 3){
+        [self showAlert:@"取消"];
+    }
+    
+}
+
+
+
+
 
 
 @end

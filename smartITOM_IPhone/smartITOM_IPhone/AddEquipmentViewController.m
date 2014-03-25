@@ -1,20 +1,21 @@
 //
-//  AddAttentionViewController.m
+//  AddEquipmentViewController.m
 //  smartITOM_IPhone
 //
-//  Created by Apple Developer on 14-3-21.
+//  Created by Apple Developer on 14-3-25.
 //  Copyright (c) 2014年 Apple002. All rights reserved.
 //
 
-#import "AddAttentionViewController.h"
+#import "AddEquipmentViewController.h"
+#import "AddEquipmentCell.h"
 
-@interface AddAttentionViewController ()
+@interface AddEquipmentViewController ()
 {
     NSMutableArray *equipments;
 }
 @end
 
-@implementation AddAttentionViewController
+@implementation AddEquipmentViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -28,6 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     equipments = [[NSMutableArray alloc] initWithObjects:@"设备1", @"设备2", @"设备3", @"设备4", @"设备5", @"设备6", nil];
     
 }
@@ -52,9 +54,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"AddAttentionCell";
-    AddAttentionCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    cell.addAttentionLabel.text = [equipments objectAtIndex:indexPath.row];
+    static NSString *CellIdentifier = @"AddEquipmentCell";
+    AddEquipmentCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    cell.addEquipmentLabel.text = [equipments objectAtIndex:indexPath.row];
+    // Configure the cell...
     
     return cell;
 }

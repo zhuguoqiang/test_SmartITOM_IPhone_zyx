@@ -1,14 +1,14 @@
 //
-//  AddAttentionCell.m
+//  AddEquipmentCell.m
 //  smartITOM_IPhone
 //
-//  Created by Apple Developer on 14-3-21.
+//  Created by Apple Developer on 14-3-25.
 //  Copyright (c) 2014年 Apple002. All rights reserved.
 //
 
-#import "AddAttentionCell.h"
+#import "AddEquipmentCell.h"
 
-@implementation AddAttentionCell
+@implementation AddEquipmentCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

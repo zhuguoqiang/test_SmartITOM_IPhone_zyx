@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "AttentionTableViewCell.h"
 
-@interface AttentionViewController : UITableViewController
+@interface AttentionViewController : UITableViewController<UIActionSheetDelegate>
 //@property (strong, nonatomic) NSArray *equipments;
 //@property (strong, nonatomic) NSArray *reports;
+@property (strong, nonatomic) UIBarButtonItem *addButton;
 
 @end

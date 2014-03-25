@@ -132,6 +132,7 @@
 //        secondView.layer.borderColor = [[UIColor blueColor] CGColor];
         UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, 320, 160)];
         textView.text = @"SSH:ipad@10.10.152.18";
+        textView.font = [UIFont boldSystemFontOfSize:18];
         textView.layer.borderWidth = 1;
         textView.layer.borderColor = [[UIColor blueColor] CGColor];
         [viewController.view addSubview:textView];
@@ -140,6 +141,7 @@
         UIViewController *viewController = (UIViewController *)segue.destinationViewController;
         UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, 320, 160)];
         textView.text = @"telnet 61.152.158.132 23";
+        textView.font = [UIFont boldSystemFontOfSize:18];
         textView.layer.borderWidth = 1;
         textView.layer.borderColor = [[UIColor blueColor] CGColor];
         [viewController.view addSubview:textView];
@@ -148,6 +150,7 @@
         UIViewController *viewController = (UIViewController *)segue.destinationViewController;
         UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, 320, 160)];
         textView.text = @"反馈意见";
+        textView.font = [UIFont boldSystemFontOfSize:18];
         textView.layer.borderWidth = 1;
         textView.layer.borderColor = [[UIColor blueColor] CGColor];
         [viewController.view addSubview:textView];

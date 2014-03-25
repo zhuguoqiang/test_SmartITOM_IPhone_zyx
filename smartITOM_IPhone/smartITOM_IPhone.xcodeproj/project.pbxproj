@@ -24,6 +24,10 @@
 		18437E8918BF21BF00F916D5 /* ELineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 18437E8218BF21BF00F916D5 /* ELineChart.m */; };
 		18437E8A18BF21BF00F916D5 /* ELineChartDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18437E8418BF21BF00F916D5 /* ELineChartDataModel.m */; };
 		1856980318C96CEF00640F10 /* ToolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1856980218C96CEF00640F10 /* ToolViewController.m */; };
+		1858443618E172220005BAC9 /* AddEquipmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1858443518E172220005BAC9 /* AddEquipmentViewController.m */; };
+		1858443C18E172B50005BAC9 /* AddEquipmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1858443B18E172B50005BAC9 /* AddEquipmentCell.m */; };
+		1858443F18E172C70005BAC9 /* AddReportCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1858443E18E172C70005BAC9 /* AddReportCell.m */; };
+		1858444218E174C20005BAC9 /* AddReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1858444118E174C20005BAC9 /* AddReportViewController.m */; };
 		185F134518D038E00087D14A /* ELine.m in Sources */ = {isa = PBXBuildFile; fileRef = 185F134418D038E00087D14A /* ELine.m */; };
 		188F0D9018D2BFAB005E52BB /* HostTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F0D8F18D2BFAB005E52BB /* HostTableViewController.m */; };
 		188F0D9318D2C11D005E52BB /* HostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F0D9218D2C11D005E52BB /* HostCell.m */; };
@@ -44,8 +48,6 @@
 		18DFF03F18D830EA0049AA6F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185F134118D038460087D14A /* QuartzCore.framework */; };
 		18E20BB718DBF10100865B83 /* AttentionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E20BB618DBF10100865B83 /* AttentionViewController.m */; };
 		18E20BBD18DC1BFB00865B83 /* AttentionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E20BBC18DC1BFB00865B83 /* AttentionTableViewCell.m */; };
-		18E20BC318DC2DA600865B83 /* AddAttentionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E20BC218DC2DA600865B83 /* AddAttentionViewController.m */; };
-		18E20BC618DC2EAE00865B83 /* AddAttentionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E20BC518DC2EAE00865B83 /* AddAttentionCell.m */; };
 		4A21E73818BF125600B13FE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A21E73718BF125600B13FE7 /* Foundation.framework */; };
 		4A21E73A18BF125600B13FE7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A21E73918BF125600B13FE7 /* CoreGraphics.framework */; };
 		4A21E73C18BF125600B13FE7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A21E73B18BF125600B13FE7 /* UIKit.framework */; };
@@ -98,6 +100,14 @@
 		18437E8418BF21BF00F916D5 /* ELineChartDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELineChartDataModel.m; sourceTree = "<group>"; };
 		1856980118C96CEF00640F10 /* ToolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolViewController.h; sourceTree = "<group>"; };
 		1856980218C96CEF00640F10 /* ToolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolViewController.m; sourceTree = "<group>"; };
+		1858443418E172220005BAC9 /* AddEquipmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEquipmentViewController.h; sourceTree = "<group>"; };
+		1858443518E172220005BAC9 /* AddEquipmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEquipmentViewController.m; sourceTree = "<group>"; };
+		1858443A18E172B50005BAC9 /* AddEquipmentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEquipmentCell.h; sourceTree = "<group>"; };
+		1858443B18E172B50005BAC9 /* AddEquipmentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEquipmentCell.m; sourceTree = "<group>"; };
+		1858443D18E172C70005BAC9 /* AddReportCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddReportCell.h; sourceTree = "<group>"; };
+		1858443E18E172C70005BAC9 /* AddReportCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddReportCell.m; sourceTree = "<group>"; };
+		1858444018E174C20005BAC9 /* AddReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddReportViewController.h; sourceTree = "<group>"; };
+		1858444118E174C20005BAC9 /* AddReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddReportViewController.m; sourceTree = "<group>"; };
 		185F134118D038460087D14A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		185F134318D038E00087D14A /* ELine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELine.h; sourceTree = "<group>"; };
 		185F134418D038E00087D14A /* ELine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELine.m; sourceTree = "<group>"; };
@@ -130,10 +140,6 @@
 		18E20BB618DBF10100865B83 /* AttentionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionViewController.m; sourceTree = "<group>"; };
 		18E20BBB18DC1BFB00865B83 /* AttentionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttentionTableViewCell.h; sourceTree = "<group>"; };
 		18E20BBC18DC1BFB00865B83 /* AttentionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionTableViewCell.m; sourceTree = "<group>"; };
-		18E20BC118DC2DA600865B83 /* AddAttentionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAttentionViewController.h; sourceTree = "<group>"; };
-		18E20BC218DC2DA600865B83 /* AddAttentionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAttentionViewController.m; sourceTree = "<group>"; };
-		18E20BC418DC2EAE00865B83 /* AddAttentionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAttentionCell.h; sourceTree = "<group>"; };
-		18E20BC518DC2EAE00865B83 /* AddAttentionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAttentionCell.m; sourceTree = "<group>"; };
 		4A21E73418BF125600B13FE7 /* smartITOM_IPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smartITOM_IPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A21E73718BF125600B13FE7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4A21E73918BF125600B13FE7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -263,10 +269,14 @@
 		18E20BBF18DC2D1100865B83 /* subAttentionView */ = {
 			isa = PBXGroup;
 			children = (
-				18E20BC118DC2DA600865B83 /* AddAttentionViewController.h */,
-				18E20BC218DC2DA600865B83 /* AddAttentionViewController.m */,
-				18E20BC418DC2EAE00865B83 /* AddAttentionCell.h */,
-				18E20BC518DC2EAE00865B83 /* AddAttentionCell.m */,
+				1858443418E172220005BAC9 /* AddEquipmentViewController.h */,
+				1858443518E172220005BAC9 /* AddEquipmentViewController.m */,
+				1858443A18E172B50005BAC9 /* AddEquipmentCell.h */,
+				1858443B18E172B50005BAC9 /* AddEquipmentCell.m */,
+				1858444018E174C20005BAC9 /* AddReportViewController.h */,
+				1858444118E174C20005BAC9 /* AddReportViewController.m */,
+				1858443D18E172C70005BAC9 /* AddReportCell.h */,
+				1858443E18E172C70005BAC9 /* AddReportCell.m */,
 			);
 			name = subAttentionView;
 			sourceTree = "<group>";
@@ -465,27 +475,29 @@
 				188F0D9018D2BFAB005E52BB /* HostTableViewController.m in Sources */,
 				18437E8618BF21BF00F916D5 /* EChartViewController.m in Sources */,
 				18D9C76B18E00FEF00EC8610 /* SettingsTableViewCell.m in Sources */,
+				1858443618E172220005BAC9 /* AddEquipmentViewController.m in Sources */,
 				185F134518D038E00087D14A /* ELine.m in Sources */,
 				4A21E74E18BF125600B13FE7 /* ViewController.m in Sources */,
 				18D9C76518DFCA1500EC8610 /* SQLViewController.m in Sources */,
 				18E20BBD18DC1BFB00865B83 /* AttentionTableViewCell.m in Sources */,
-				18E20BC318DC2DA600865B83 /* AddAttentionViewController.m in Sources */,
 				18409FA018CD8E78003D9632 /* HostViewController.m in Sources */,
 				4A21E74818BF125600B13FE7 /* AppDelegate.m in Sources */,
 				188F0D9318D2C11D005E52BB /* HostCell.m in Sources */,
 				1856980318C96CEF00640F10 /* ToolViewController.m in Sources */,
 				182104D818D1451E00A2369D /* ItsmTableViewController.m in Sources */,
+				1858443C18E172B50005BAC9 /* AddEquipmentCell.m in Sources */,
 				18437E8518BF21BF00F916D5 /* EChartCell.m in Sources */,
 				18DFF03918D82FC20049AA6F /* Prefs.m in Sources */,
 				189B180318C5ADD2006F6370 /* LoginViewController.m in Sources */,
 				18437E8A18BF21BF00F916D5 /* ELineChartDataModel.m in Sources */,
+				1858443F18E172C70005BAC9 /* AddReportCell.m in Sources */,
 				4A21E74418BF125600B13FE7 /* main.m in Sources */,
 				18DFF03C18D830190049AA6F /* CHKeychain.m in Sources */,
-				18E20BC618DC2EAE00865B83 /* AddAttentionCell.m in Sources */,
 				18409FA318CD97BA003D9632 /* AlarmViewController.m in Sources */,
 				18409F9218CD68CE003D9632 /* NewsTableViewCell.m in Sources */,
 				18437E8918BF21BF00F916D5 /* ELineChart.m in Sources */,
 				18437E8718BF21BF00F916D5 /* EColor.m in Sources */,
+				1858444218E174C20005BAC9 /* AddReportViewController.m in Sources */,
 				18409F8F18CD67CF003D9632 /* NewsViewController.m in Sources */,
 				182104DB18D1458500A2369D /* ItsmCell.m in Sources */,
 				18E20BB718DBF10100865B83 /* AttentionViewController.m in Sources */,
