@@ -10,9 +10,14 @@
 #import "EChartViewController.h"
 #import "Prefs.h"
 #import "CHKeychain.h"
+#import <sqlite3.h>
 
 @interface LoginViewController ()
+{
+    sqlite3 *userDB;
+    NSString *databasePath;
 
+}
 @end
 
 @implementation LoginViewController
@@ -29,9 +34,38 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.username.text = @"admin";
-    self.password.text = @"123456";
-//    self.password.text = [user objectAtIndex:1];
+    
+    //创建一个数据库users
+    NSArray *dirPaths;
+    NSString *docsDir;
+    dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    docsDir = [dirPaths objectAtIndex:0];
+    databasePath = [[NSString alloc] initWithString: [docsDir stringByAppendingPathComponent: @"users.db"]];
+    
+    //输出数据库文件的路径
+//    NSLog(@"%@",databasePath);
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    //判断是否成功创建数据库
+    if ([fileManager fileExistsAtPath:databasePath] == NO)
+    {
+        //打开数据库，这里的[databasePath UTF8String]是将NSString转换为C字符串，因为SQLite3是采用可移植的C(而不是
+        //Objective-C)编写的，它不知道什么是NSString.
+        const char *dbpath = [databasePath UTF8String];
+        if (sqlite3_open(dbpath, &userDB)==SQLITE_OK)
+        {
+            char *errMsg;
+            const char *sql_stmt = "CREATE TABLE IF NOT EXISTS USERS(ID INTEGER PRIMARY KEY AUTOINCREMENT, USERNAME TEXT, PASSWORD TEXT)";
+            if (sqlite3_exec(userDB, sql_stmt, NULL, NULL, &errMsg)!=SQLITE_OK) {
+                NSLog(@"创建表失败\n");
+            }
+        }
+        else
+        {
+            NSLog(@"创建/打开数据库失败\n");
+        }
+    }
+
     self.password.secureTextEntry = YES;
     
     //默认记住密码和自动登录
@@ -135,39 +169,68 @@
 
 - (IBAction)loginPress:(UIButton *)sender
 {
-    
-//    NSString *filePath = [self documentsPath:@"user.txt"];
-//    //从user这个文件里读出用户名和密码是否与输入的相同
-//    NSArray *user = [NSArray arrayWithContentsOfFile:filePath];
-//    NSLog(@"%@",filePath);
-//    if([self.username.text isEqualToString:[user objectAtIndex:0]] && [self.password.text isEqualToString:[user objectAtIndex:1]])
-//    {
-    if ([self.username.text isEqual:@"admin"] && [self.password.text isEqualToString:@"123456"])
-    {
-        //如果验证正确，则重新打开一个窗口
-        [self performSegueWithIdentifier:@"login" sender:self];
-        NSLog(@"登录成功！\n");
-    }
-    else if ([self.username.text isEqual:@""] || [self.password.text isEqual:@""])
-    {
-        NSLog(@"用户名或密码不能为空！\n");
+    if ([self.username.text isEqual:@""] || [self.password.text isEqual:@""]) {
         UIAlertView *judgeLogin = [[UIAlertView alloc]initWithTitle:@"登录提示"
                                                             message:@"用户名或密码不能为空！"
                                                            delegate:self
                                                   cancelButtonTitle:@"取消"
                                                   otherButtonTitles:@"确定",nil];
         [judgeLogin show];
+        
     }
-    else
-    {
-        NSLog(@"用户名或密码错误！\n");
-        UIAlertView *judgeLogin = [[UIAlertView alloc]initWithTitle:@"登录提示"
-                                               message:@"用户名或密码错误！"
-                                              delegate:self
-                                     cancelButtonTitle:@"取消"
-                                     otherButtonTitles:@"确定",nil];
-        [judgeLogin show];
+    else{
+        
+        
+        const char *dbpath = [databasePath UTF8String];
+        sqlite3_stmt *statement;
+        
+        if (sqlite3_open(dbpath, &userDB) == SQLITE_OK)
+        {
+            NSString *querySQL = [NSString stringWithFormat:@"SELECT PASSWORD FROM USERS WHERE USERNAME=\"%@\"", self.username.text];
+            const char *query_stmt = [querySQL UTF8String];
+            if (sqlite3_prepare_v2(userDB, query_stmt, -1, &statement, NULL) == SQLITE_OK)
+            {
+                if (sqlite3_step(statement) == SQLITE_ROW)
+                {
+                    NSString *passwordField = [[NSString alloc] initWithUTF8String:(const char *)sqlite3_column_text(statement, 0)];
+                    if ([self.password.text isEqualToString:passwordField]) {
+                        [self performSegueWithIdentifier:@"login" sender:self];
+                        NSLog(@"登录成功！\n");
+                    }
+                }
+                else
+                {
+                    UIAlertView *judgeLogin = [[UIAlertView alloc]initWithTitle:@"登录提示"
+                                                                        message:@"用户名或密码错误！"
+                                                                       delegate:self
+                                                              cancelButtonTitle:@"取消"
+                                                              otherButtonTitles:@"确定",nil];
+                    [judgeLogin show];
+                }
+                sqlite3_finalize(statement);
+            }
+            
+            sqlite3_close(userDB);
+        }
     }
+    
+//    if ([self.username.text isEqual:@"admin"] && [self.password.text isEqualToString:@"123456"])
+//    {
+//        //如果验证正确，则重新打开一个窗口
+//        [self performSegueWithIdentifier:@"login" sender:self];
+//        NSLog(@"登录成功！\n");
+//    }
+
+//    else
+//    {
+//        NSLog(@"用户名或密码错误！\n");
+//        UIAlertView *judgeLogin = [[UIAlertView alloc]initWithTitle:@"登录提示"
+//                                               message:@"用户名或密码错误！"
+//                                              delegate:self
+//                                     cancelButtonTitle:@"取消"
+//                                     otherButtonTitles:@"确定",nil];
+//        [judgeLogin show];
+//    }
     
     //登录成功之后记录密码
 	if (rememberPassword) {
