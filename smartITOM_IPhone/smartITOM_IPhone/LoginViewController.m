@@ -40,7 +40,7 @@
     NSString *docsDir;
     dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     docsDir = [dirPaths objectAtIndex:0];
-    databasePath = [[NSString alloc] initWithString: [docsDir stringByAppendingPathComponent: @"users.db"]];
+    databasePath = [[NSString alloc] initWithString: [docsDir stringByAppendingPathComponent: @"SmartITOM.db"]];
     
     //输出数据库文件的路径
 //    NSLog(@"%@",databasePath);
@@ -55,7 +55,7 @@
         if (sqlite3_open(dbpath, &userDB)==SQLITE_OK)
         {
             char *errMsg;
-            const char *sql_stmt = "CREATE TABLE IF NOT EXISTS USERS(ID INTEGER PRIMARY KEY AUTOINCREMENT, USERNAME TEXT, PASSWORD TEXT)";
+            const char *sql_stmt = "CREATE TABLE IF NOT EXISTS tb_user(ID INTEGER PRIMARY KEY AUTOINCREMENT, USERNAME TEXT, PASSWORD TEXT)";
             if (sqlite3_exec(userDB, sql_stmt, NULL, NULL, &errMsg)!=SQLITE_OK) {
                 NSLog(@"创建表失败\n");
             }
@@ -66,11 +66,17 @@
         }
     }
 
+    //为登录面添加密码，不用时可删除
+//    self.username.text = @"admin";
+//    self.password.text = @"123456";
+    self.username.text = @"";
+    self.password.text = @"";
     self.password.secureTextEntry = YES;
     
     //默认记住密码和自动登录
     rememberPassword = YES;
     automaticLogin = YES;
+    
     //设置记住密码和自动登录的图片
     [self.btnRememberPassword setBackgroundImage:[UIImage imageNamed:@"checkbox_nor.png"] forState:UIControlStateNormal];
     [self.btnRememberPassword setBackgroundImage:[UIImage imageNamed:@"checkbox_checked.png"] forState:UIControlStateSelected];
@@ -125,13 +131,13 @@
 //清空用户名输入内容
 - (IBAction)clearUsername
 {
-    self.username.text = @"";
+    self.username.text = nil;
 }
 
 //清空密码输入内容
 - (IBAction)clearPassword
 {
-    self.password.text = @"";
+    self.password.text = nil;
 }
 
 //退出键盘
@@ -145,12 +151,6 @@
 {
     [sender resignFirstResponder];
 }
-
-//- (IBAction)backgroundTip:(id)sender
-//{
-//    [self.username resignFirstResponder];
-//    [self.password resignFirstResponder];
-//}
 
 //设置记住密码图片切换
 - (IBAction)rememberPassword:(UIButton *)sender
@@ -169,7 +169,9 @@
 
 - (IBAction)loginPress:(UIButton *)sender
 {
-    if ([self.username.text isEqual:@""] || [self.password.text isEqual:@""]) {
+    if ([self.username.text isEqualToString:@""] || [self.password.text isEqualToString:@""])
+//    if (([self.username.text length] == 0) || ([self.password.text length] == 0))
+    {
         UIAlertView *judgeLogin = [[UIAlertView alloc]initWithTitle:@"登录提示"
                                                             message:@"用户名或密码不能为空！"
                                                            delegate:self
@@ -178,15 +180,14 @@
         [judgeLogin show];
         
     }
-    else{
-        
-        
+    else
+    {
         const char *dbpath = [databasePath UTF8String];
         sqlite3_stmt *statement;
         
         if (sqlite3_open(dbpath, &userDB) == SQLITE_OK)
         {
-            NSString *querySQL = [NSString stringWithFormat:@"SELECT PASSWORD FROM USERS WHERE USERNAME=\"%@\"", self.username.text];
+            NSString *querySQL = [NSString stringWithFormat:@"SELECT PASSWORD FROM tb_user WHERE USERNAME=\"%@\"", self.username.text];
             const char *query_stmt = [querySQL UTF8String];
             if (sqlite3_prepare_v2(userDB, query_stmt, -1, &statement, NULL) == SQLITE_OK)
             {
@@ -200,37 +201,18 @@
                 }
                 else
                 {
-                    UIAlertView *judgeLogin = [[UIAlertView alloc]initWithTitle:@"登录提示"
+                    UIAlertView *alertLogin = [[UIAlertView alloc]initWithTitle:@"登录提示"
                                                                         message:@"用户名或密码错误！"
                                                                        delegate:self
                                                               cancelButtonTitle:@"取消"
                                                               otherButtonTitles:@"确定",nil];
-                    [judgeLogin show];
+                    [alertLogin show];
                 }
                 sqlite3_finalize(statement);
             }
-            
             sqlite3_close(userDB);
         }
     }
-    
-//    if ([self.username.text isEqual:@"admin"] && [self.password.text isEqualToString:@"123456"])
-//    {
-//        //如果验证正确，则重新打开一个窗口
-//        [self performSegueWithIdentifier:@"login" sender:self];
-//        NSLog(@"登录成功！\n");
-//    }
-
-//    else
-//    {
-//        NSLog(@"用户名或密码错误！\n");
-//        UIAlertView *judgeLogin = [[UIAlertView alloc]initWithTitle:@"登录提示"
-//                                               message:@"用户名或密码错误！"
-//                                              delegate:self
-//                                     cancelButtonTitle:@"取消"
-//                                     otherButtonTitles:@"确定",nil];
-//        [judgeLogin show];
-//    }
     
     //登录成功之后记录密码
 	if (rememberPassword) {
@@ -241,7 +223,7 @@
 	}else {
 		[CHKeychain delete:KEY_USERNAME_PASSWORD];
 	}
-
+    
 }
 
 //-(NSString *)bundlePath:(NSString *)fileName

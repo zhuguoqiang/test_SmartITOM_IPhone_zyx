@@ -258,6 +258,19 @@
 			name = toolView;
 			sourceTree = "<group>";
 		};
+		1896943F18E51812003A32A9 /* loginView */ = {
+			isa = PBXGroup;
+			children = (
+				189B180118C5ADD2006F6370 /* LoginViewController.h */,
+				189B180218C5ADD2006F6370 /* LoginViewController.m */,
+				18DFF03718D82FC20049AA6F /* Prefs.h */,
+				18DFF03818D82FC20049AA6F /* Prefs.m */,
+				18DFF03A18D830190049AA6F /* CHKeychain.h */,
+				18DFF03B18D830190049AA6F /* CHKeychain.m */,
+			);
+			name = loginView;
+			sourceTree = "<group>";
+		};
 		18E20BB418DBF09600865B83 /* attentionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,13 +351,8 @@
 				4A21E74718BF125600B13FE7 /* AppDelegate.m */,
 				4A21E74C18BF125600B13FE7 /* ViewController.h */,
 				4A21E74D18BF125600B13FE7 /* ViewController.m */,
-				189B180118C5ADD2006F6370 /* LoginViewController.h */,
-				189B180218C5ADD2006F6370 /* LoginViewController.m */,
-				18DFF03718D82FC20049AA6F /* Prefs.h */,
-				18DFF03818D82FC20049AA6F /* Prefs.m */,
-				18DFF03A18D830190049AA6F /* CHKeychain.h */,
-				18DFF03B18D830190049AA6F /* CHKeychain.m */,
 				4A21E74F18BF125600B13FE7 /* Images.xcassets */,
+				1896943F18E51812003A32A9 /* loginView */,
 				18409F9A18CD8DA2003D9632 /* newsView */,
 				182104DC18D14A9E00A2369D /* subNewsView */,
 				18E20BB418DBF09600865B83 /* attentionView */,

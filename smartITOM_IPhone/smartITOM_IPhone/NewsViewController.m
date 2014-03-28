@@ -7,14 +7,18 @@
 //
 
 #import "NewsViewController.h"
+#import <sqlite3.h>
 
 
 @interface NewsViewController ()
 {
     NSMutableArray *newsName;
     NSMutableArray *newsTime;
+    NSMutableArray *newsImage;
     UIView *secondView;
     UIView *thirdView;
+    sqlite3 *newsDB;
+    NSString *databasePath;
 }
 
 @end
@@ -41,9 +45,47 @@
     //初始化数组，为可变数组指定初始容量
     //self.views = [NSMutableArray arrayWithCapacity:10];
     self.views = [[NSMutableArray alloc] init];
-    newsName = [[NSMutableArray alloc] initWithObjects:@"host_dhcc",@"alarm_flows",@"msg_itsm", nil];
-    newsTime = [[NSMutableArray alloc] initWithObjects:@"9:12",@"8:30",@"7:00", nil];
     
+    newsName = [[NSMutableArray alloc] init];
+    newsTime = [[NSMutableArray alloc] init];
+    newsImage = [[NSMutableArray alloc] init];
+
+    //从数据库中select数组newsName、newsTime、newsImage的值
+    NSArray *dirPaths;
+    NSString *docsDir;
+    dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    docsDir = [dirPaths objectAtIndex:0];
+    databasePath = [[NSString alloc] initWithString: [docsDir stringByAppendingPathComponent: @"SmartITOM.db"]];
+    const char *dbpath = [databasePath UTF8String];
+    sqlite3_stmt *statement;
+    
+    if (sqlite3_open(dbpath, &newsDB) == SQLITE_OK)
+    {
+        for (int i = 1; i <= 3; i++) {
+            NSString *querySQL = [NSString stringWithFormat:@"select news_name, news_time, news_image from tb_news WHERE id = '%d'",i];
+            const char *query_stmt = [querySQL UTF8String];
+            if (sqlite3_prepare_v2(newsDB, query_stmt, -1, &statement, NULL) == SQLITE_OK)
+            {
+                if (sqlite3_step(statement) == SQLITE_ROW)
+                {
+                    [newsName addObject:[[NSString alloc] initWithUTF8String:(const char *)sqlite3_column_text(statement, 0)]];
+                    [newsTime addObject:[[NSString alloc] initWithUTF8String:(const char *)sqlite3_column_text(statement, 1)]];
+                    [newsImage addObject:[[NSString alloc] initWithUTF8String:(const char *)sqlite3_column_text(statement, 2)]];
+                }
+                else
+                {
+                    UIAlertView *alertLogin = [[UIAlertView alloc]initWithTitle:@"消息提示"
+                                                                        message:@"news查询错误！"
+                                                                       delegate:self
+                                                              cancelButtonTitle:@"取消"
+                                                              otherButtonTitles:@"确定",nil];
+                    [alertLogin show];
+                }
+            }
+        }
+        sqlite3_finalize(statement);
+        sqlite3_close(newsDB);
+    }
     //第一个UIView _eLineChart---------------------------------------------------
     NSMutableArray *tempArray = [NSMutableArray array];
     for (int i = 0 ; i < 300; i++)
@@ -60,7 +102,6 @@
     [self.views addObject:_eLineChart];
 
     //第二个UIView---------------------------------------------------------------
-    //CGRectMake(x, y, width, height)
     secondView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 209, 110)];
     secondView.layer.borderWidth = 1;
     secondView.layer.borderColor = [[UIColor blueColor] CGColor];
@@ -118,13 +159,13 @@
     cell.newsNames.text = [newsName objectAtIndex:indexPath.row];
     cell.newsTimes.text = [newsTime objectAtIndex:indexPath.row];
     if (indexPath.row == 0) {
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"host" ofType:@"png"];
+        NSString *path = [[NSBundle mainBundle] pathForResource:[newsImage objectAtIndex:indexPath.row] ofType:@"png"];
         [cell.newsImages setImage:[UIImage imageWithContentsOfFile:path]];
     }else if (indexPath.row == 1) {
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"alarm" ofType:@"png"];
+        NSString *path = [[NSBundle mainBundle] pathForResource:[newsImage objectAtIndex:indexPath.row] ofType:@"png"];
         [cell.newsImages setImage:[UIImage imageWithContentsOfFile:path]];
-    }else {
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"msg" ofType:@"png"];
+    }else if (indexPath.row == 2) {
+        NSString *path = [[NSBundle mainBundle] pathForResource:[newsImage objectAtIndex:indexPath.row] ofType:@"png"];
         [cell.newsImages setImage:[UIImage imageWithContentsOfFile:path]];
     }
 

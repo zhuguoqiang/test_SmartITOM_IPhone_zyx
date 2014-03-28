@@ -35,23 +35,17 @@
 
 @protocol ELineChartDelegate <NSObject>
 @required
-- (void) eLineChartDidReachTheEnd:(ELineChart *)eLineChart;
-
-- (void) eLineChart:(ELineChart *)eLineChart
-      didTapAtPoint:(ELineChartDataModel *)eLineChartDataModel;
-
-- (void)    eLineChart:(ELineChart *)eLineChart
- didHoldAndMoveToPoint:(ELineChartDataModel *)eLineChartDataModel;
-
-- (void) fingerDidLeaveELineChart:(ELineChart *)eLineChart;
-
-- (void) eLineChart:(ELineChart *)eLineChart
-     didZoomToScale:(float)scale;
-
 
 
 @optional
-
+- (void) eLineChartDidReachTheEnd:(ELineChart *)eLineChart;
+- (void) eLineChart:(ELineChart *)eLineChart
+      didTapAtPoint:(ELineChartDataModel *)eLineChartDataModel;
+- (void) eLineChart:(ELineChart *)eLineChart
+didHoldAndMoveToPoint:(ELineChartDataModel *)eLineChartDataModel;
+- (void) fingerDidLeaveELineChart:(ELineChart *)eLineChart;
+- (void) eLineChart:(ELineChart *)eLineChart
+     didZoomToScale:(float)scale;
 @end
 
 
