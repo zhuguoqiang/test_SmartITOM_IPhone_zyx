@@ -150,9 +150,23 @@
     
 }
 
-
-
-
+#pragma mark -insertObject
+-(void)setValue:(NSString *)object
+{
+    NSArray *array = [[NSArray alloc] initWithArray:equipments];
+    int flag = 0;
+    for (NSString *string in array)
+    {
+        if ([string isEqualToString:object])
+            flag = 1;
+    }
+    if (flag == 0)
+    {
+        [equipments addObject:object];
+    }
+    [self.tableView reloadData];
+    NSLog(@"chenggong");
+}
 
 
 @end

@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddEquipmentViewController : UITableViewController
+@protocol insertObject <NSObject>
 
+-(void)setValue:(NSString *)object;
+
+@end
+
+@interface AddEquipmentViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate>
+@property (assign,nonatomic) id <insertObject> delegate;
 @end

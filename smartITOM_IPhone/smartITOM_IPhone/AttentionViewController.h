@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "AttentionTableViewCell.h"
+#import "AddEquipmentViewController.h"
+#import "AddReportViewController.h"
 
-@interface AttentionViewController : UITableViewController<UIActionSheetDelegate>
+@interface AttentionViewController : UITableViewController<UIActionSheetDelegate, insertObject>
 //@property (strong, nonatomic) NSArray *equipments;
 //@property (strong, nonatomic) NSArray *reports;
 @property (strong, nonatomic) UIBarButtonItem *addButton;

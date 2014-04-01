@@ -11,11 +11,12 @@
 
 @interface AddEquipmentViewController ()
 {
-    NSMutableArray *equipments;
+    NSMutableArray *allEquipments;
 }
 @end
 
 @implementation AddEquipmentViewController
+@synthesize delegate;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -30,7 +31,7 @@
 {
     [super viewDidLoad];
     
-    equipments = [[NSMutableArray alloc] initWithObjects:@"设备1", @"设备2", @"设备3", @"设备4", @"设备5", @"设备6", nil];
+    allEquipments = [[NSMutableArray alloc] initWithObjects:@"设备1", @"设备2", @"设备3", @"设备4", @"设备5", @"设备6", nil];
     
 }
 
@@ -49,7 +50,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return equipments.count;
+    return allEquipments.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -57,7 +58,7 @@
     static NSString *CellIdentifier = @"AddEquipmentCell";
     AddEquipmentCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.addEquipmentLabel.text = [equipments objectAtIndex:indexPath.row];
+    cell.addEquipmentLabel.text = [allEquipments objectAtIndex:indexPath.row];
     // Configure the cell...
     
     return cell;
@@ -65,16 +66,18 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [delegate setValue:[allEquipments objectAtIndex:indexPath.row]];
     NSUInteger row = [indexPath row];
-    NSString *rowTitle = [equipments objectAtIndex:row];
+    NSLog(@"%@",self.delegate);
+    NSString *rowTitle = [allEquipments objectAtIndex:row];
     UIAlertView *alert = [[UIAlertView alloc]
                           initWithTitle:@"添加成功！"
                           message:[NSString stringWithFormat:@"你关注了%@", rowTitle]
-                          delegate:nil
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles: nil];
+                          delegate:self
+                          cancelButtonTitle:nil
+                          otherButtonTitles:@"OK", nil];
     [alert show];
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 

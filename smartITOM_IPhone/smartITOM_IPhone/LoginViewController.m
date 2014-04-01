@@ -67,10 +67,10 @@
     }
 
     //为登录面添加密码，不用时可删除
-//    self.username.text = @"admin";
-//    self.password.text = @"123456";
-    self.username.text = @"";
-    self.password.text = @"";
+    self.username.text = @"admin";
+    self.password.text = @"123456";
+//    self.username.text = @"";
+//    self.password.text = @"";
     self.password.secureTextEntry = YES;
     
     //默认记住密码和自动登录
