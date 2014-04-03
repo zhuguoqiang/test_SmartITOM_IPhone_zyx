@@ -8,7 +8,7 @@
 
 #import "NewsViewController.h"
 #import <sqlite3.h>
-
+#define DATABASE_FILE @"SmartITOM.db"
 
 @interface NewsViewController ()
 {
@@ -55,7 +55,8 @@
     NSString *docsDir;
     dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     docsDir = [dirPaths objectAtIndex:0];
-    databasePath = [[NSString alloc] initWithString: [docsDir stringByAppendingPathComponent: @"SmartITOM.db"]];
+//    databasePath = [[NSString alloc] initWithString: [docsDir stringByAppendingPathComponent: @"SmartITOM.db"]];
+    databasePath = [docsDir stringByAppendingPathComponent:DATABASE_FILE];
     const char *dbpath = [databasePath UTF8String];
     sqlite3_stmt *statement;
     

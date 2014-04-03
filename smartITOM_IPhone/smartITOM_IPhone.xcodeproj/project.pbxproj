@@ -36,6 +36,7 @@
 		189B180318C5ADD2006F6370 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189B180218C5ADD2006F6370 /* LoginViewController.m */; };
 		189B180818C5C5EB006F6370 /* user.txt in Resources */ = {isa = PBXBuildFile; fileRef = 189B180718C5C5EB006F6370 /* user.txt */; };
 		189B180C18C5D073006F6370 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 189B180B18C5D073006F6370 /* logo.png */; };
+		18BC73D118ED213600B4FCE1 /* SmartITOM.db in Resources */ = {isa = PBXBuildFile; fileRef = 18F7917F18ED02B800C1D16F /* SmartITOM.db */; };
 		18D9C76518DFCA1500EC8610 /* SQLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D9C76418DFCA1500EC8610 /* SQLViewController.m */; };
 		18D9C76818DFEDAE00EC8610 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D9C76718DFEDAE00EC8610 /* SettingsViewController.m */; };
 		18D9C76B18E00FEF00EC8610 /* SettingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D9C76A18E00FEF00EC8610 /* SettingsTableViewCell.m */; };
@@ -130,6 +131,7 @@
 		18E20BB618DBF10100865B83 /* AttentionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionViewController.m; sourceTree = "<group>"; };
 		18E20BBB18DC1BFB00865B83 /* AttentionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttentionTableViewCell.h; sourceTree = "<group>"; };
 		18E20BBC18DC1BFB00865B83 /* AttentionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionTableViewCell.m; sourceTree = "<group>"; };
+		18F7917F18ED02B800C1D16F /* SmartITOM.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = SmartITOM.db; sourceTree = "<group>"; };
 		4A21E73418BF125600B13FE7 /* smartITOM_IPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smartITOM_IPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A21E73718BF125600B13FE7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4A21E73918BF125600B13FE7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -290,6 +292,14 @@
 			name = subToolView;
 			sourceTree = "<group>";
 		};
+		18F7917E18ED026500C1D16F /* database */ = {
+			isa = PBXGroup;
+			children = (
+				18F7917F18ED02B800C1D16F /* SmartITOM.db */,
+			);
+			name = database;
+			sourceTree = "<group>";
+		};
 		4A21E72B18BF125600B13FE7 = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +348,7 @@
 				18E20BC018DC2D4300865B83 /* subToolView */,
 				1856980018C9599300640F10 /* EChart */,
 				18409F9918CD6A82003D9632 /* image */,
+				18F7917E18ED026500C1D16F /* database */,
 				4A21E73E18BF125600B13FE7 /* Supporting Files */,
 			);
 			path = smartITOM_IPhone;
@@ -407,6 +418,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18BC73D118ED213600B4FCE1 /* SmartITOM.db in Resources */,
 				18409F9818CD6A60003D9632 /* msg.png in Resources */,
 				18409F9618CD6A60003D9632 /* host.png in Resources */,
 				18DFF03218D7F7AE0049AA6F /* checkbox_checked.png in Resources */,

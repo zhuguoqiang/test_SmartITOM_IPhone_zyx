@@ -12,6 +12,8 @@
 #import "CHKeychain.h"
 #import <sqlite3.h>
 
+#define DATABASE_FILE @"SmartITOM.db"
+
 @interface LoginViewController ()
 {
     sqlite3 *userDB;
@@ -40,30 +42,36 @@
     NSString *docsDir;
     dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     docsDir = [dirPaths objectAtIndex:0];
-    databasePath = [[NSString alloc] initWithString: [docsDir stringByAppendingPathComponent: @"SmartITOM.db"]];
+//    databasePath = [[NSString alloc] initWithString: [docsDir stringByAppendingPathComponent: @"SmartITOM.db"]];
+    databasePath = [docsDir stringByAppendingPathComponent:DATABASE_FILE];
     
     //输出数据库文件的路径
-//    NSLog(@"%@",databasePath);
+    NSLog(@"%@",databasePath);
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
     //判断是否成功创建数据库
     if ([fileManager fileExistsAtPath:databasePath] == NO)
     {
-        //打开数据库，这里的[databasePath UTF8String]是将NSString转换为C字符串，因为SQLite3是采用可移植的C(而不是
-        //Objective-C)编写的，它不知道什么是NSString.
-        const char *dbpath = [databasePath UTF8String];
-        if (sqlite3_open(dbpath, &userDB)==SQLITE_OK)
-        {
-            char *errMsg;
-            const char *sql_stmt = "CREATE TABLE IF NOT EXISTS tb_user(ID INTEGER PRIMARY KEY AUTOINCREMENT, USERNAME TEXT, PASSWORD TEXT)";
-            if (sqlite3_exec(userDB, sql_stmt, NULL, NULL, &errMsg)!=SQLITE_OK) {
-                NSLog(@"创建表失败\n");
-            }
-        }
-        else
-        {
-            NSLog(@"创建/打开数据库失败\n");
-        }
+        //复制数据库到沙盒
+        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"SmartITOM" ofType:@"db"];
+        NSLog(@"数据库路径：%@",filePath);
+        [[NSFileManager defaultManager] copyItemAtPath:filePath toPath:databasePath error:nil];
+        
+//        //打开数据库，这里的[databasePath UTF8String]是将NSString转换为C字符串，因为SQLite3是采用可移植的C(而不是
+//        //Objective-C)编写的，它不知道什么是NSString.
+//        const char *dbpath = [databasePath UTF8String];
+//        if (sqlite3_open(dbpath, &userDB)==SQLITE_OK)
+//        {
+//            char *errMsg;
+//            const char *sql_stmt = "CREATE TABLE IF NOT EXISTS tb_user(ID INTEGER PRIMARY KEY AUTOINCREMENT, USERNAME TEXT, PASSWORD TEXT)";
+//            if (sqlite3_exec(userDB, sql_stmt, NULL, NULL, &errMsg)!=SQLITE_OK) {
+//                NSLog(@"创建表失败\n");
+//            }
+//        }
+//        else
+//        {
+//            NSLog(@"创建/打开数据库失败\n");
+//        }
     }
 
     //为登录面添加密码，不用时可删除
